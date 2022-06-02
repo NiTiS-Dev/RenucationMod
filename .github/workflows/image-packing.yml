@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Chmod
-        run: chmod +x .resize.sh
+        run: chmod +x resize.sh
         
       - name: Pack
         run: resize.sh
