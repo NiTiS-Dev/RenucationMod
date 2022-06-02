@@ -1,0 +1,8 @@
+author = NiTiS-Dev
+displayName = Renucation
+homepage = https://github.com/NiTiS-Dev/RenucationMod
+hideCode = false
+hideResources = false
+includeSource = true
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Old\*
+includePDB = true
