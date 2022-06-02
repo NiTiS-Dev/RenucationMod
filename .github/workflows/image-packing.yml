@@ -19,7 +19,7 @@ jobs:
         run: chmod +x resize.sh
         
       - name: Pack
-        run: resize.sh
+        run: ./resize.sh
         
       - name: Commit Changes
         if: ${{ success() || failure() }}
