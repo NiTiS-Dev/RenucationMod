@@ -3,7 +3,7 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Terraria;
 
-namespace Renucation.Content.Items.Placeble;
+namespace Renucation.Content.Items.Placeable;
 
 public class MagneturnBar : ModItem
 {
