@@ -17,11 +17,11 @@ jobs:
       
       - name: Chmod
         run: |
-          chmod +x resize.sh
+          chmod +x resize.cmd
           chmod +x ImageResizer
         
       - name: Pack
-        run: ./resize.sh
+        run: ./resize.cmd
         
       - name: Commit Changes
         run: |
