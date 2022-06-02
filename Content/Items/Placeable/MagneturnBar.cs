@@ -25,7 +25,7 @@ public class MagneturnBar : ModItem
 		Item.useTime = 10;
 		Item.autoReuse = true;
 		Item.consumable = true;
-		//Item.createTile = ModContent.TileType<>();
+		Item.createTile = ModContent.TileType<Tiles.MagneturnBar>();
 		Item.placeStyle = 0;
 	}
 
