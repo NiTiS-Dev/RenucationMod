@@ -17,11 +17,10 @@ jobs:
       
       - name: Chmod
         run: |
-          ImageResizer -o "Assets/" -f "AssetsRaw/*.png" -m NearestNeighbor -s 2x2
           chmod +x ImageResizer
         
       - name: Pack
-        run: ./resize.cmd
+        run: ImageResizer -o "Assets/" -f "AssetsRaw/*.png" -m NearestNeighbor -s 2x2
         
       - name: Commit Changes
         run: |
