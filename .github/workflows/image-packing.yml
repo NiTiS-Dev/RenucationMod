@@ -1,0 +1,22 @@
+name: Image Packing
+
+
+on:
+  push:
+    branches: [ singleton ]
+    paths:
+    - 'AssetsRaw/*.png'
+    
+    workflow_dispatch:
+    
+jobs:
+  Pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Chmod
+        run: chmod +x .resize.sh
+        
+      - name: Pack
+        run: resize.sh
