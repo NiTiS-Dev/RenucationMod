@@ -19,6 +19,7 @@ jobs:
         run: |
           chmod +x resize.cmd
           chmod +x ImageResizer
+          set PATH=%PATH;${GITHUB_WORKSPACE}
         
       - name: Pack
         run: ./resize.cmd
