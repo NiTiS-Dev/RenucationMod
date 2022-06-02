@@ -10,6 +10,7 @@
 		<Authors>NickName73, NiTiS-Dev</Authors>
 		<AssemblyVersion>0.0.0.1</AssemblyVersion>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
 		<PackageReference Include="NiTiS.Collections" Version="1.3.*" />
