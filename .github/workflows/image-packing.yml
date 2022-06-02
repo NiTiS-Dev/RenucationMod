@@ -11,15 +11,14 @@ on:
     
 jobs:
   Pack:
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
       - name: Chmod
         run: |
-          chmod +x resize.cmd
+          ImageResizer -o "Assets/" -f "AssetsRaw/*.png" -m NearestNeighbor -s 2x2
           chmod +x ImageResizer
-          set PATH=%PATH;${GITHUB_WORKSPACE}
         
       - name: Pack
         run: ./resize.cmd
