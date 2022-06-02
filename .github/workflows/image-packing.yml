@@ -3,7 +3,6 @@ name: Image Packing
 
 on:
   push:
-    branches: [ singleton ]
     paths:
     - 'AssetsRaw/**/*.png'
     
@@ -18,8 +17,7 @@ jobs:
       - name: Chmod
         run: |
           chmod +x ImageResizer
-      - name: Delete Depricated Textures
-        run: rm -f Assets/Textures/*.png
+
       - name: Pack
         run: ./ImageResizer -o "Content/" -f "AssetsRaw/Textures/*.png" -m NearestNeighbor -s 2x2
         
