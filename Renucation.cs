@@ -1,3 +1,6 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Renucation
@@ -8,6 +11,15 @@ namespace Renucation
 		public override void Unload()
 		{
 
+		}
+		public override void AddRecipes()
+		{
+			CreateRecipe(ItemID.WaterWalkingBoots, 1)
+				.AddIngredient(ItemID.WaterWalkingPotion, 4)
+				.AddIngredient(ItemID.HermesBoots)
+				.AddTile(TileID.TinkerersWorkbench)
+				//.AddCondition(NetworkText.FromKey("RecipeConditions.AroundWaterCandle"), (Recipe _) => Main.LocalPlayer.ZoneWaterCandle)
+				.Register();
 		}
 	}
 }
