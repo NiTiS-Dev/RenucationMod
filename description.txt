@@ -1,4 +1,5 @@
 Renucation vetta test
 
 v0.0.1: 
-+ Megneturn Ingot
++ Magneturn Ingot
++ New "Water Walking Boots" recipe
