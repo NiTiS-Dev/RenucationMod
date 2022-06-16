@@ -30,7 +30,7 @@ public class SoulofMech : ModItem
 		Item.height = 18;
 		Item.maxStack = 999;
 		Item.value = 1000;
-		Item.rare = ItemRarityID.Purple;
+		Item.rare = ItemRarityID.LightPurple;
 	}
 
 	public override void PostUpdate()
