@@ -1,14 +1,11 @@
 Mods: {
 	Renucation: {
 		Config: {
-			ItemHeader: Options
-
-			SampleEnumLabels: {
-				Peculiar: Very Peculiar
-			}
-
-			ExampleWingsToggle: {
-				Label: ExampleWings Toggle
+			CraftsHeader: Recipes
+			
+			WaterBootsCraft: {
+				Label: Enable Craft of Water Walking Boots
+				Tooltip: When enabled the recipe exists
 			}
 		}
 	}

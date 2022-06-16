@@ -1,5 +1,7 @@
-Renucation vetta test
+Renucation [c/FFFFFF:Vetta] test
 
-v0.0.1: 
-+ Magneturn Ingot
-+ New "Water Walking Boots" recipe
+
+v0.0.0.1:
+[c/32FF82: Added Magneturn Ingot]
+[c/32FF82: Added Soul of Mechanism]
+[c/32FF82: Added New "Water Walking Boots" recipe]
