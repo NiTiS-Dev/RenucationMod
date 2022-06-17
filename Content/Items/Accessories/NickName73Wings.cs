@@ -16,7 +16,7 @@ public class NickName73Wings : ModItem
 		DisplayName.SetDefault("NickName73's Wings");
 		Tooltip.SetDefault("ALWAYS WATCHING TO ME\n" + Language.GetTextValue("CommonItemTooltip.DevItem"));
 
-		CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+		SacrificeTotal = 1;
 
 		ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(150, 7f);
 	}
