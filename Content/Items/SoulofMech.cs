@@ -34,9 +34,7 @@ public class SoulofMech : ModItem
 	}
 
 	public override void PostUpdate()
-	{
-		Lighting.AddLight(Item.Center, Color.WhiteSmoke.ToVector3() * 0.55f * Main.essScale);
-	}
+		=> Lighting.AddLight(Item.Center, new Color(114, 252, 246).ToVector3() * 0.55f * Main.essScale);
 	public override void AddRecipes()
 	{
 		CreateRecipe(2)
