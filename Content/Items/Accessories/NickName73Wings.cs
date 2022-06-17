@@ -3,6 +3,7 @@
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Renucation.Content.Items.Accessories;
@@ -13,12 +14,10 @@ public class NickName73Wings : ModItem
 	public override void SetStaticDefaults()
 	{
 		DisplayName.SetDefault("NickName73's Wings");
-		Tooltip.SetDefault("ALWAYS WATCHING TO ME");
+		Tooltip.SetDefault("ALWAYS WATCHING TO ME\n" + Language.GetTextValue("CommonItemTooltip.DevItem"));
 
 		CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
-		// Fly time: 150 ticks = 2.5 seconds
-		// Fly speed: 7
 		ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(150, 7f);
 	}
 	public override void SetDefaults()
