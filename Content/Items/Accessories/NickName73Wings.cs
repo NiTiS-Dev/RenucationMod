@@ -17,18 +17,16 @@ public class NickName73Wings : ModItem
 
 		CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 
-		// These wings use the same values as the solar wings
-		// Fly time: 180 ticks = 3 seconds
-		// Fly speed: 9
-		// Acceleration multiplier: 2.5
-		ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(150, 9f, 2.5f);
+		// Fly time: 150 ticks = 2.5 seconds
+		// Fly speed: 7
+		ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(150, 7f);
 	}
 	public override void SetDefaults()
 	{
 		Item.width = 22;
 		Item.height = 20;
-		Item.value = 10000;
-		Item.rare = ItemRarityID.Green;
+		Item.vanity = false;
+		Item.rare = ItemRarityID.Cyan;
 		Item.accessory = true;
 	}
 }

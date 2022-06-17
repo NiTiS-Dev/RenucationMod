@@ -6,6 +6,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<LangVersion>latest</LangVersion>
+		<NoWarn>MSB3270</NoWarn>
 
 		<Authors>NickName73, NiTiS-Dev</Authors>
 		<AssemblyVersion>0.0.0.3</AssemblyVersion>
