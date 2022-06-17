@@ -23,8 +23,8 @@ public class NickName73Wings : ModItem
 	}
 	public override void SetDefaults()
 	{
-		Item.width = 22;
-		Item.height = 20;
+		Item.width = 30;
+		Item.height = 30;
 		Item.vanity = false;
 		Item.rare = ItemRarityID.Cyan;
 		Item.accessory = true;
