@@ -39,10 +39,22 @@ public class SoulofMech : ModItem
 	}
 	public override void AddRecipes()
 	{
-		CreateRecipe()
-			.AddIngredient(ItemID.SoulofSight, 3)
-			.AddIngredient(ItemID.SoulofFright, 3)
-			.AddIngredient(ItemID.SoulofMight, 3)
+		CreateRecipe(2)
+			.AddIngredient(ItemID.SoulofSight, 2)
+			.AddIngredient(ItemID.SoulofFright, 2)
+			//.AddIngredient(ItemID.SoulofMight, 2)
+			.AddTile(TileID.MythrilAnvil)
+			.Register();
+		CreateRecipe(2)
+			.AddIngredient(ItemID.SoulofSight, 2)
+			//.AddIngredient(ItemID.SoulofFright, 2)
+			.AddIngredient(ItemID.SoulofMight, 2)
+			.AddTile(TileID.MythrilAnvil)
+			.Register();
+		CreateRecipe(2)
+			//.AddIngredient(ItemID.SoulofSight, 2)
+			.AddIngredient(ItemID.SoulofFright, 2)
+			.AddIngredient(ItemID.SoulofMight, 2)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}

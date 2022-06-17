@@ -1,0 +1,24 @@
+Mods: {
+	Renucation: {
+		Config: {
+			CraftsHeader: Рецепты
+			
+			WaterBootsCraft: {
+				Label: Добавить рецепт для Ботинок хождения по воде
+				Tooltip: Когда включен, рецепт присутствует
+			}
+		}
+		ItemName: {
+			OceanRider: Мореплаватель
+			SoulofMech: Эссенция механизма
+		}
+		ItemTooltip: {
+			OceanRider: Океан не оставит вас без патронов
+			SoulofMech: 
+				'''
+				Эссенция древних механизмов
+				Соединение душ террора
+				'''
+		}
+	}
+}

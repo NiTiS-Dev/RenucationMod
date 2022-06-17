@@ -1,10 +1,14 @@
 Renucation [c/FFFFFF:Vetta] test
 
 
+v0.0.0.3:
+- Change recipe of "Soul of Mechanism"
+
+
 v0.0.0.2:
-[c/32FF82: Added Ocean Rider]
+- Added Ocean Rider
 
 v0.0.0.1:
-[c/32FF82: Added Magneturn Ingot]
-[c/32FF82: Added Soul of Mechanism]
-[c/32FF82: Added New "Water Walking Boots" recipe]
+- Added Magneturn Ingot
+- Added Soul of Mechanism
+- Added New "Water Walking Boots" recipe

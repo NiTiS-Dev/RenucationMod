@@ -36,7 +36,7 @@ public class OceanRider : ModItem
 		Item.useTime = 7;
 		Item.UseSound = SoundID.Item11;
 		Item.useStyle = ItemUseStyleID.Shoot;
-		Item.value = Item.buyPrice(gold: 8, silver: 50);
+		Item.value = Item.buyPrice(gold: 55);
 
 		Item.shoot = ProjectileID.PurificationPowder;
 		Item.shootSpeed = 21;
@@ -48,14 +48,14 @@ public class OceanRider : ModItem
 		CreateRecipe()
 			.AddIngredient(ItemID.Seashell, 15)
 			.AddIngredient(ItemID.IllegalGunParts, 1)
-			.AddIngredient(ItemID.HallowedBar, 18)
+			.AddIngredient(ItemID.HallowedBar, 12)
 			.AddIngredient<SoulofMech>(10)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}
 	public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
 	{
-		velocity = velocity.RotatedByRandom(MathHelper.ToRadians(6.5f));
+		velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1f));
 	}
 	public override bool CanConsumeAmmo(Item ammo, Player player)
 	{
