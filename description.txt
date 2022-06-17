@@ -2,7 +2,9 @@ Renucation [c/FFFFFF:Vetta] test
 
 
 v0.0.0.3:
-- Change recipe of "Soul of Mechanism"
+- Changed recipe of "Soul of Mechanism"
+- Added secret wings
+- Changed texture of "Soul of Mechanism"
 
 
 v0.0.0.2:
