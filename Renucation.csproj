@@ -18,6 +18,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <Folder Include="AssetsRaw\Textures\Items\Armor\" />
 	  <Folder Include="Assets\" />
 	</ItemGroup>
 </Project>

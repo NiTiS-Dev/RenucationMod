@@ -17,7 +17,6 @@ public class RenucationStartingPlayer : ModPlayer
 			return new Item[]
 			{
 				new Item(ModContent.ItemType<NickName73Wings>(), 1),
-				new Item(ModContent.ItemType<NickName73Helmet>(), 1)
 			};
 		}
 
