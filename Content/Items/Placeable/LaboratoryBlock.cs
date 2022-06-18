@@ -1,12 +1,28 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace Renucation.Content.Items.Placeable;
-public class LaboratoryBlock
+public class LaboratoryBlock : ModItem
 {
+	public override void SetStaticDefaults()
+	{
+		SacrificeTotal = 100;
+		//ItemID.Sets.ExtractinatorMode[Item.type] = Item.type; Extractor
+	}
+
+	public override void SetDefaults()
+	{
+		Item.width = 10;
+		Item.height = 10;
+		Item.maxStack = 999;
+		Item.useTurn = true;
+		Item.autoReuse = true;
+		Item.useAnimation = 15;
+		Item.useTime = 10;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.consumable = true;
+		Item.createTile = ModContent.TileType<Tiles.LaboratoryBlock>();
+	}
 }

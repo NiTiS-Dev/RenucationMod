@@ -15,7 +15,7 @@ public class LaboratoryBlock : ModTile
 
 		DustType = DustID.Adamantite;
 
-		ItemDrop = ItemID.StoneBlock;
+		ItemDrop = ModContent.ItemType<Items.Placeable.LaboratoryBlock>();
 
 		AddMapEntry(new Color(200, 200, 200));
 	}
