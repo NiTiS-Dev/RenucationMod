@@ -1,11 +1,13 @@
 Renucation [c/FFFFFF:Vetta] test
 
 
+v0.0.0.4:
+- Added "Laboratory Block"
+
 v0.0.0.3:
 - Changed recipe of "Soul of Mechanism"
 - Added secret wings
 - Changed texture of "Soul of Mechanism"
-
 
 v0.0.0.2:
 - Added Ocean Rider
