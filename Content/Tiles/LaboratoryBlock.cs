@@ -1,12 +1,27 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace Renucation.Content.Tiles;
-public class LaboratoryBlock
+public class LaboratoryBlock : ModTile
 {
+	public override void SetStaticDefaults()
+	{
+		Main.tileSolid[Type] = true;
+		Main.tileMergeDirt[Type] = true;
+		Main.tileBlockLight[Type] = true;
+
+		DustType = DustID.Adamantite;
+
+		ItemDrop = ItemID.StoneBlock;
+
+		AddMapEntry(new Color(200, 200, 200));
+	}
+
+	public override void NumDust(int i, int j, bool fail, ref int num)
+	{
+		num = fail ? 1 : 3;
+	}
 }
