@@ -14,8 +14,8 @@ public class LaboratoryBlock : ModItem
 
 	public override void SetDefaults()
 	{
-		Item.width = 10;
-		Item.height = 10;
+		Item.width = 8;
+		Item.height = 8;
 		Item.maxStack = 999;
 		Item.useTurn = true;
 		Item.autoReuse = true;

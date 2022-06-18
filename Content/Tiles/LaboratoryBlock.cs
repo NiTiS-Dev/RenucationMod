@@ -10,8 +10,11 @@ public class LaboratoryBlock : ModTile
 	public override void SetStaticDefaults()
 	{
 		Main.tileSolid[Type] = true;
-		Main.tileMergeDirt[Type] = true;
+		Main.tileMerge[TileID.Stone][Type] = true;
+		Main.tileMerge[TileID.Dirt][Type] = true;
 		Main.tileBlockLight[Type] = true;
+		MinPick = 200;
+		MineResist = 16.5f;
 
 		DustType = DustID.Adamantite;
 
