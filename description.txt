@@ -1,8 +1,18 @@
-Renucation [c/FFFFFF:Vetta] test
+Renucation Vetta test
 
+This project is Open-Source
+Repository: https://github.com/NiTiS-Dev/RenucationMod
+
+!!! Warning
+Laboratory are still in developing
+
+
+v0.0.0.5:
 
 v0.0.0.4:
-- Added "Laboratory Block"
+- Added "Laboratory Block" (and block item)
+- Added "Laboratory" biome
+- Added "Laboratory" rarity
 
 v0.0.0.3:
 - Changed recipe of "Soul of Mechanism"
