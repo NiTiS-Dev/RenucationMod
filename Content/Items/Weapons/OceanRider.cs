@@ -19,7 +19,7 @@ public class OceanRider : ModItem
 		DisplayName.SetDefault("Ocean Rider");
 		Tooltip.SetDefault("The ocean provides you with bullets");
 
-		CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+		SacrificeTotal = 1;
 	}
 	public override void SetDefaults()
 	{

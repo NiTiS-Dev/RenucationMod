@@ -1,5 +1,7 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 using System;
+using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Renucation.Common.Systems;
@@ -9,7 +11,6 @@ public class IntegrationSystem : ModSystem
 	{
 		DoBossChecklistIntegration();
 	}
-
 	private void DoBossChecklistIntegration()
 	{
 		if (!ModLoader.TryGetMod("BossChecklist", out Mod bossChecklistMod))
@@ -23,7 +24,6 @@ public class IntegrationSystem : ModSystem
 		{
 			return;
 		}
-
 		// Add boss here <---------------------------------------------TODO
 	}
 }
