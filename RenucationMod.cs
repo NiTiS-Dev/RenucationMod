@@ -6,12 +6,11 @@ using Renucation.Common.Configs;
 
 namespace Renucation;
 
-public class RenucationMod : Mod
+public partial class RenucationMod : Mod
 {
 	public const string AssetPath = $"Renucation/Assets/";
 	public override void Unload()
 	{
-
 	}
 	public override void AddRecipes()
 	{

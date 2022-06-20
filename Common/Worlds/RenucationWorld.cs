@@ -29,6 +29,8 @@ public class RenucationWorld : ModSystem
 	{
 		progress.Message = Language.GetTextValue("Mods.Renucation.WorldGen.Steps.IslandGeneration");
 
+		return; /* Develop */
+
 		// Place laboratory otherside skeletron dungeon
 		int x = (Main.dungeonX > Main.maxTilesX / 2) ? 170 : Main.maxTilesX - 170;
 

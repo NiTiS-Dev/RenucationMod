@@ -20,10 +20,10 @@ public class EnemyKillSystem : ModSystem
 	}
 	private void EnemyKill(object self, NPC sawBody, Player killer)
 	{
-		Main.NewText("Enemy was killed " + sawBody.GivenOrTypeName);
+		//Main.NewText("Enemy was killed " + sawBody.GivenOrTypeName);
 		if (sawBody.type is NPCID.SkeletronPrime or NPCID.TheDestroyer or NPCID.Spazmatism or NPCID.Retinazer)
 		{
-			Main.NewText("The doors of the laboratory collapsed under the roar of a mechanical creature");
+			Main.NewText("The doors of the laboratory collapsed under the roar of a mechanical creature", new Microsoft.Xna.Framework.Color(54, 198, 20));
 		}
 	}
 	public override void OnWorldUnload()

@@ -3,11 +3,16 @@ Renucation Vetta test
 This project is Open-Source
 Repository: https://github.com/NiTiS-Dev/RenucationMod
 
+If you want to join develop this project
+Discord: @NiTiSon#3995
+
 !!! Warning
 Laboratory are still in developing
 
 
 v0.0.0.5:
+- Added "Neko Slime" (spawning in laboratory biome)
+- Tested laboratory island generation
 
 v0.0.0.4:
 - Added "Laboratory Block" (and block item)
