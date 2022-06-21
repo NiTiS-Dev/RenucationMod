@@ -9,7 +9,7 @@
 		<NoWarn>MSB3270</NoWarn>
 
 		<Authors>NickName73, NiTiS-Dev</Authors>
-		<AssemblyVersion>0.0.0.5</AssemblyVersion>
+		<AssemblyVersion>0.0.0.6</AssemblyVersion>
 	</PropertyGroup>
 	
 	<ItemGroup>

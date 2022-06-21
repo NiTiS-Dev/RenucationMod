@@ -13,4 +13,10 @@ public class RenucationConfig : ModConfig
 	[DefaultValue(true)]
 	[ReloadRequired]
 	public bool EnableWaterBotsCraft;
+
+	[Header("$Mods.Renucation.Config.WorldGenHeader")]
+	[Label("$Mods.Renucation.Config.INDEVGEN.Label")]
+	[Tooltip("$Mods.Renucation.Config.INDEVGEN.Tooltip")]
+	[DefaultValue(false)]
+	public bool EnableINDEVGeneration;
 }

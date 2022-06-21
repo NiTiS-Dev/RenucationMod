@@ -2,11 +2,19 @@ Mods: {
 	Renucation: {
 		Config: {
 			CraftsHeader: Recipes
+			WorldGenHeader: World Generation
 			
 			WaterBootsCraft: {
 				Label: Enable Craft of Water Walking Boots
 				Tooltip: When enabled the recipe exists
 			}
+			INDEVGEN: {
+				Label: Enable Alpha World Generation
+				Tooltip: [c/FF1919:This function may not work correctly]
+			}
+		}
+		ItemName: {
+			Vibrax: Vibraxe
 		}
 	}
 }
