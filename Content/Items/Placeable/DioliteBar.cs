@@ -15,6 +15,7 @@ public class DioliteBar : ModItem
 	{
 		SacrificeTotal = 25;
 		ItemID.Sets.SortingPriorityMaterials[Item.type] = 65;
+		ItemID.Sets.AnimatesAsSoul[Item.type] = true;
 	}
 
 	public override void SetDefaults()

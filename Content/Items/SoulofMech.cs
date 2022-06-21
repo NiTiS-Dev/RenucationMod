@@ -21,7 +21,7 @@ public class SoulofMech : ModItem
 		ItemID.Sets.ItemIconPulse[Item.type] = true;
 		ItemID.Sets.ItemNoGravity[Item.type] = true;
 
-		CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+		SacrificeTotal = 25;
 	}
 
 	public override void SetDefaults()
