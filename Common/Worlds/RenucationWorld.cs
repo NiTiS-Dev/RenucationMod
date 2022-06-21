@@ -9,12 +9,17 @@ using Terraria.WorldBuilding;
 using Terraria.Localization;
 using Terraria.IO;
 using Microsoft.Xna.Framework;
+using Renucation.Common.Configs;
 
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
 	public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 	{
+		if (!ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration)
+			return;
+
+
 		//int IslandIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Floating Islands"));
 		int IslandIndex = tasks.Count - 1;
 		if (IslandIndex != -1)
@@ -28,8 +33,6 @@ public class RenucationWorld : ModSystem
 	private void LaboratoryGeneration(GenerationProgress progress, GameConfiguration config)
 	{
 		progress.Message = Language.GetTextValue("Mods.Renucation.WorldGen.Steps.IslandGeneration");
-
-		return; /* Develop */
 
 		// Place laboratory otherside skeletron dungeon
 		int x = (Main.dungeonX > Main.maxTilesX / 2) ? 170 : Main.maxTilesX - 170;

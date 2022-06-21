@@ -17,7 +17,7 @@ public class NekoSlime : ModNPC
 	{
 		DisplayName.SetDefault("Neko Slime");
 
-		Main.npcFrameCount[Type] = 2;
+		Main.npcFrameCount[Type] = 3;
 
 		NPCID.Sets.NPCBestiaryDrawModifiers value = new(0)
 		{
@@ -43,11 +43,12 @@ public class NekoSlime : ModNPC
 		NPC.HitSound = SoundID.NPCHit1;
 		NPC.DeathSound = SoundID.NPCDeath2;
 		NPC.value = 450f;
-		NPC.knockBackResist = 0.7f;
+		NPC.knockBackResist = 1.9f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
+		NPC.spriteDirection = 1;
 
 		AIType = NPCID.BlueSlime;
-		AnimationType = NPCID.BlueSlime;
+		AnimationType = NPCID.ToxicSludge;
 		Banner = Item.NPCtoBanner(NPCID.BlueSlime);
 		BannerItem = Item.BannerToItem(Banner);
 		SpawnModBiomes = new int[1] { ModContent.GetInstance<TheLaboratory>().Type };

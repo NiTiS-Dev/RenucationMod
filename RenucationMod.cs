@@ -17,12 +17,12 @@ public partial class RenucationMod : Mod
 		RenucationConfig renucationConfig = ModContent.GetInstance<RenucationConfig>();
 		if (renucationConfig.EnableWaterBotsCraft)
 		{
-			CreateRecipe(ItemID.WaterWalkingBoots, 1)
-			.AddIngredient(ItemID.WaterWalkingPotion, 4)
-			.AddIngredient(ItemID.HermesBoots)
-			.AddTile(TileID.TinkerersWorkbench)
-			//.AddCondition(NetworkText.FromKey("RecipeConditions.AroundWaterCandle"), (Recipe _) => Main.LocalPlayer.ZoneWaterCandle)
-			.Register();
+			Recipe.Create(ItemID.WaterWalkingBoots, 1)
+				.AddIngredient(ItemID.WaterWalkingPotion, 4)
+				.AddIngredient(ItemID.HermesBoots)
+				.AddTile(TileID.TinkerersWorkbench)
+				//.AddCondition(NetworkText.FromKey("RecipeConditions.AroundWaterCandle"), (Recipe _) => Main.LocalPlayer.ZoneWaterCandle)
+				.Register();
 		}
 	}
 }
