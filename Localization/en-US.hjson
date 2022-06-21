@@ -10,11 +10,29 @@ Mods: {
 			}
 			INDEVGEN: {
 				Label: Enable Alpha World Generation
-				Tooltip: [c/FF1919:This function may not work correctly]
+				Tooltip: This function may not work correctly
 			}
 		}
 		ItemName: {
-			Vibrax: Vibraxe
+			Vibraxe: Vibraxe
+			KrabRave: KrabRave
+			OceanRider: Ocean Rider
+		}
+		Prefix: {
+			ConfidentialPrefix: Confidential
+		}
+		BiomeName: {
+			TheLaboratory: The Laboratory
+		}
+		Bestiary: {
+			ExamplePerson: Built of blocks with arms of steel. Pumps iron day and night.
+			ExampleBoneMerchant: Built with bone blocks and arms of steel. Throws bones day and night. 
+		}
+		BestiaryInfo: {
+			NekoSlime: 
+				'''
+				Little cute creature (from a distance)
+				'''
 		}
 	}
 }

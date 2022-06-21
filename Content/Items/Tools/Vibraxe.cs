@@ -14,12 +14,12 @@ public class Vibraxe : ModItem
 	}
 	public override void SetDefaults()
 	{
-		Item.damage = 21;
+		Item.damage = 48;
 		Item.DamageType = DamageClass.Melee;
 		Item.width = 40;
 		Item.height = 30;
 		Item.useTime = 10;
-		Item.useAnimation = 10;
+		Item.useAnimation = 15;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 6;
 		Item.value = Item.buyPrice(gold: 95);
@@ -27,7 +27,7 @@ public class Vibraxe : ModItem
 		Item.UseSound = SoundID.Item1;
 		Item.autoReuse = true;
 
-		Item.pick = 200;
+		Item.pick = 195;
 	}
 	public override void MeleeEffects(Player player, Rectangle hitbox)
 	{

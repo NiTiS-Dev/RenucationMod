@@ -21,7 +21,7 @@ public class NekoSlime : ModNPC
 
 		NPCID.Sets.NPCBestiaryDrawModifiers value = new(0)
 		{
-			Velocity = 1f
+			Velocity = 0.2f
 		};
 		NPCID.Sets.DebuffImmunitySets.Add(Type, new NPCDebuffImmunityData
 		{
@@ -39,10 +39,10 @@ public class NekoSlime : ModNPC
 		NPC.height = 20;
 		NPC.damage = 160;
 		NPC.defense = 20;
-		NPC.lifeMax = 1500;
+		NPC.lifeMax = 1250;
 		NPC.HitSound = SoundID.NPCHit1;
 		NPC.DeathSound = SoundID.NPCDeath2;
-		NPC.value = 280f;
+		NPC.value = 450f;
 		NPC.knockBackResist = 0.7f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
 
@@ -50,7 +50,7 @@ public class NekoSlime : ModNPC
 		AnimationType = NPCID.BlueSlime;
 		Banner = Item.NPCtoBanner(NPCID.BlueSlime);
 		BannerItem = Item.BannerToItem(Banner);
-		SpawnModBiomes = new int[1] { ModContent.GetInstance<LaboratoryBiome>().Type };
+		SpawnModBiomes = new int[1] { ModContent.GetInstance<TheLaboratory>().Type };
 	}
 
 	public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -63,11 +63,9 @@ public class NekoSlime : ModNPC
 	{
 		return (spawnInfo.Player.GetModPlayer<RenucationPlayer>().ZoneTheLaboratory ? 1 : 0);
 	}
-	public static SpawnConditionBestiaryInfoElement TheLaboratory = new("Mods.Renucation.BestiaryCondition.TheLaboratory", 1, "Images/MapBG36");
 	public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
 	{
 		bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				TheLaboratory,
 				new FlavorTextBestiaryInfoElement("Mods.Renucation.BestiaryInfo.NekoSlime")
 			});
 	}

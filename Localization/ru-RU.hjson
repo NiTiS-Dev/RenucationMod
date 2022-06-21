@@ -11,7 +11,7 @@ Mods: {
 		ItemName: {
 			OceanRider: Мореплаватель
 			SoulofMech: Эссенция механизма
-			Vibrax: Вибракс
+			Vibraxe: Вибракс
 		}
 		ItemTooltip: {
 			OceanRider: Океан не оставит вас без патронов

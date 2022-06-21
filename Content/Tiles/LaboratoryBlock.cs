@@ -13,7 +13,7 @@ public class LaboratoryBlock : ModTile
 		Main.tileMerge[TileID.Stone][Type] = true;
 		Main.tileMerge[TileID.Dirt][Type] = true;
 		Main.tileBlockLight[Type] = true;
-		MinPick = 200;
+		MinPick = 195;
 		MineResist = 16.5f;
 
 		DustType = DustID.Adamantite;
@@ -22,7 +22,8 @@ public class LaboratoryBlock : ModTile
 
 		AddMapEntry(new Color(200, 200, 200));
 	}
-
+	public override bool CanExplode(int i, int j)
+		=> false;
 	public override void NumDust(int i, int j, bool fail, ref int num)
 	{
 		num = fail ? 1 : 3;

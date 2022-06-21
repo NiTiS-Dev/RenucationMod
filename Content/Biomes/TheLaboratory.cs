@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace Renucation.Content.Biomes;
-public class LaboratoryBiome : ModBiome
+public class TheLaboratory : ModBiome
 {
 	public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 	public override void OnInBiome(Player player)
