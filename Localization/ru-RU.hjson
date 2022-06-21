@@ -2,10 +2,15 @@ Mods: {
 	Renucation: {
 		Config: {
 			CraftsHeader: Рецепты
+			WorldGenHeader: Генерация мира
 			
 			WaterBootsCraft: {
 				Label: Добавить рецепт для Ботинок хождения по воде
 				Tooltip: Когда включен, рецепт присутствует
+			}
+			INDEVGEN: {
+				Label: Включить тестовую генерацию
+				Tooltip: Эта функция может работать некоректно
 			}
 		}
 		ItemName: {
@@ -19,6 +24,18 @@ Mods: {
 				'''
 				Эссенция древних механизмов
 				Соединение душ террора
+				'''
+		}
+		Prefix: {
+			ConfidentialPrefix: Засекреченый
+		}
+		BiomeName: {
+			TheLaboratory: Лаборатория
+		}
+		BestiaryInfo: {
+			NekoSlime: 
+				'''
+				Милейшее создание на всём белом свете (елси смотреть из за горизонта, конечно)
 				'''
 		}
 	}

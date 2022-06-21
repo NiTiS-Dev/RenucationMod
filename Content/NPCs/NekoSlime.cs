@@ -45,6 +45,7 @@ public class NekoSlime : ModNPC
 		NPC.value = 450f;
 		NPC.knockBackResist = 0.25f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
+		NPC.Size *= 1.25f;
 
 		AIType = NPCID.BlueSlime;
 		AnimationType = NPCID.ToxicSludge;
@@ -56,7 +57,7 @@ public class NekoSlime : ModNPC
 	public override void ModifyNPCLoot(NPCLoot npcLoot)
 	{
 		npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 1, 3));
-		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.CatEars, 512, 128));
+		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.CatEars, 512, 256));
 	}
 
 	public override float SpawnChance(NPCSpawnInfo spawnInfo)
