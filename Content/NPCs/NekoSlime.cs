@@ -37,7 +37,7 @@ public class NekoSlime : ModNPC
 	{
 		NPC.width = 25;
 		NPC.height = 20;
-		NPC.damage = 160;
+		NPC.damage = 120;
 		NPC.defense = 20;
 		NPC.lifeMax = 1250;
 		NPC.HitSound = SoundID.NPCHit1;
@@ -45,7 +45,7 @@ public class NekoSlime : ModNPC
 		NPC.value = 450f;
 		NPC.knockBackResist = 1.9f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
-		NPC.spriteDirection = 1;
+		NPC.spriteDirection = -1;
 
 		AIType = NPCID.BlueSlime;
 		AnimationType = NPCID.ToxicSludge;
@@ -62,7 +62,7 @@ public class NekoSlime : ModNPC
 
 	public override float SpawnChance(NPCSpawnInfo spawnInfo)
 	{
-		return (spawnInfo.Player.GetModPlayer<RenucationPlayer>().ZoneTheLaboratory ? 1 : 0);
+		return (spawnInfo.Player.GetModPlayer<RenucationPlayer>().ZoneTheLaboratory ? 1 : 0) * 0.65f;
 	}
 	public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
 	{
