@@ -5,31 +5,9 @@ Repository: https://github.com/NiTiS-Dev/RenucationMod
 
 If you want to join develop this project
 Discord: @NiTiSon#3995
+Server: https://discord.gg/GhBJpkGmP4
 
 !!! Warning
 Laboratory are still in developing
 
-v0.0.0.6:
-- Added "Vibraxe"
-
-v0.0.0.5:
-- Added "Neko Slime" (spawning in laboratory biome)
-- Tested laboratory island generation
-
-v0.0.0.4:
-- Added "Laboratory Block" (and block item)
-- Added "Laboratory" biome
-- Added "Laboratory" rarity
-
-v0.0.0.3:
-- Changed recipe of "Soul of Mechanism"
-- Added secret wings
-- Changed texture of "Soul of Mechanism"
-
-v0.0.0.2:
-- Added Ocean Rider
-
-v0.0.0.1:
-- Added Magneturn Ingot
-- Added Soul of Mechanism
-- Added New "Water Walking Boots" recipe
+Changelog here: https://github.com/NiTiS-Dev/RenucationMod/blob/singleton/changelog.txt

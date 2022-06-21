@@ -1,0 +1,27 @@
+﻿v0.0.0.6:
+- Added "Vibraxe"
+- Added Diolite Ingot
+- Added option to enable INDEV generation (NOT RECOMENDED!)
+- Updated texture for "Neko Slime"
+
+v0.0.0.5:
+- Added "Neko Slime" (spawning in laboratory biome)
+- Tested laboratory island generation
+
+v0.0.0.4:
+- Added "Laboratory Block" (and block item)
+- Added "Laboratory" biome
+- Added "Laboratory" rarity
+
+v0.0.0.3:
+- Changed recipe of "Soul of Mechanism"
+- Added secret wings
+- Changed texture of "Soul of Mechanism"
+
+v0.0.0.2:
+- Added Ocean Rider
+
+v0.0.0.1:
+- Added Magneturn Ingot
+- Added Soul of Mechanism
+- Added New "Water Walking Boots" recipe
