@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 	<h1>Renucation Mod</h1>
 
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2821766147">
