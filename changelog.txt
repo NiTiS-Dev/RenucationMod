@@ -3,6 +3,7 @@
 - Added Diolite Ingot
 - Added option to enable INDEV generation (NOT RECOMENDED!)
 - Updated texture for "Neko Slime"
+- Added "Compassion" debuff
 
 v0.0.0.5:
 - Added "Neko Slime" (spawning in laboratory biome)

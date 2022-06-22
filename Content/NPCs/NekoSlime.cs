@@ -27,12 +27,19 @@ public class NekoSlime : ModNPC
 		{
 			SpecificallyImmuneTo = new int[] {
 					BuffID.Poisoned,
-					BuffID.Burning
+					BuffID.Burning,
+					Buffs.CompassionDebuff.ID
 				}
 		});
 		NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
 	}
+	public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+	{
+		if (Main.rand.Next(1, 9) > 5)
+			return;
 
+		target.AddBuff(Buffs.CompassionDebuff.ID, 60 * 10);
+	}
 	public override void SetDefaults()
 	{
 		NPC.width = 25;
