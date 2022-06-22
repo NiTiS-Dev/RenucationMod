@@ -9,3 +9,13 @@
 </a>
 
 </div>
+
+<div align="center">
+The mod will add more content and new locations to explore
+</div>
+<br/><br/>
+
+Explore mod content:  
++ A strange laboratory hidden in the depths :)  
++ New weapons and accessories  
++ New biomes and bosses  
