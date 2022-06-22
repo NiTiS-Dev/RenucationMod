@@ -16,12 +16,12 @@ public class TheLaboratory : ModBiome
 	public override void OnEnter(Player player)
 	{
 		player.GetModPlayer<RenucationPlayer>().ZoneTheLaboratory = true;
-		Main.NewText($"You enter to the {DisplayName}");
+		Main.NewText($"You enter to the ${DisplayName.Key}");
 	}
 	public override void OnLeave(Player player)
 	{
 		player.GetModPlayer<RenucationPlayer>().ZoneTheLaboratory = false;
-		Main.NewText($"You leave the {DisplayName}");
+		Main.NewText($"You leave the ${DisplayName.Key}");
 	}
 	public override bool IsBiomeActive(Player player)
 	{
