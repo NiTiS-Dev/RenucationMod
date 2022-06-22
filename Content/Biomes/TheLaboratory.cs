@@ -2,9 +2,7 @@
 using Renucation.Common.Players;
 using Renucation.Common.Systems;
 using Terraria;
-using Terraria.GameContent.Bestiary;
 using Terraria.ModLoader;
-using Terraria.UI;
 
 namespace Renucation.Content.Biomes;
 public class TheLaboratory : ModBiome
