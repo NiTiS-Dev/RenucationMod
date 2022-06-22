@@ -1,4 +1,7 @@
-﻿v0.0.0.6:
+﻿v0.0.0.7:
+- Added "Galactite Stone"
+
+v0.0.0.6:
 - Added "Vibraxe"
 - Added Diolite Ingot
 - Added option to enable INDEV generation (NOT RECOMENDED!)
