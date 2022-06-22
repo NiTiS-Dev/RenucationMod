@@ -18,7 +18,7 @@ public class GalactiteStone : ModTile
 
 		DustType = DustID.Asphalt;
 
-		ItemDrop = ItemID.CopperCoin; //TODO: Add placeable item!!!
+		ItemDrop = Items.Placeable.GalactiteStone.ID;
 
 		AddMapEntry(new Color(77, 76, 73));
 	}
