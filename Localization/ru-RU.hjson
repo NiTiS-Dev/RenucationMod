@@ -20,14 +20,27 @@ Mods: {
 		}
 		ItemTooltip: {
 			OceanRider: Океан не оставит вас без патронов
-			SoulofMech: 
+			SoulofMech:
 				'''
 				Эссенция древних механизмов
 				Соединение душ террора
 				'''
 		}
+		BuffName: {
+			CompassionDebuff: Сожаление
+		}
+		BuffDescription: {
+			CompassionDebuff:
+				'''
+				Ваш урон понижен на 20%
+				Крит шанс упал до нуля
+				'''
+		}
 		Prefix: {
 			ConfidentialPrefix: Засекреченый
+		}
+		NPCName: {
+			NekoSlime: Котолизь
 		}
 		BiomeName: {
 			TheLaboratory: Лаборатория

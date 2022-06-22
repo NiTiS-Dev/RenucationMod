@@ -18,8 +18,21 @@ Mods: {
 			KrabRave: KrabRave
 			OceanRider: Ocean Rider
 		}
+		BuffName: {
+			CompassionDebuff: Compassion
+		}
+		BuffDescription: {
+			CompassionDebuff:
+				'''
+				Your damage is reduced by 20%
+				Crit chance has dropped to zero
+				'''
+		}
 		Prefix: {
 			ConfidentialPrefix: Confidential
+		}
+		NPCName: {
+			NekoSlime: Neko Slime
 		}
 		BiomeName: {
 			TheLaboratory: The Laboratory

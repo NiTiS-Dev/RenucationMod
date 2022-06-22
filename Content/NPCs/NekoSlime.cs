@@ -33,12 +33,19 @@ public class NekoSlime : ModNPC
 		});
 		NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
 	}
-	public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+	public override void OnHitPlayer(Player target, int damage, bool crit)
 	{
-		if (Main.rand.Next(1, 9) > 5)
+		if (Main.rand.Next(0, 5) > 2)
 			return;
 
-		target.AddBuff(Buffs.CompassionDebuff.ID, 60 * 10);
+		target.AddBuff(Buffs.CompassionDebuff.ID, 60 * 25);
+	}
+	public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+	{
+		if (Main.rand.Next(0, 5) > 2)
+			return;
+
+		target.AddBuff(Buffs.CompassionDebuff.ID, 60 * 25);
 	}
 	public override void SetDefaults()
 	{
