@@ -11,6 +11,7 @@ public class GalactiteStone : ModTile
 	{
 		Main.tileSolid[Type] = true;
 		Main.tileMerge[LaboratoryBlock.ID][Type] = true;
+		Main.tileMerge[Type][LaboratoryBlock.ID] = true;
 		//Main.tileMerge[][Type] = true; TODO: Add blending for Diolite ore
 		Main.tileBlockLight[Type] = true;
 		MinPick = 165;
