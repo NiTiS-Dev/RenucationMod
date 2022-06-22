@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 namespace Renucation.Content.Tiles;
 public class LaboratoryBlock : ModTile
 {
+	public static int ID => ModContent.TileType<LaboratoryBlock>();
 	public override void SetStaticDefaults()
 	{
 		Main.tileSolid[Type] = true;
