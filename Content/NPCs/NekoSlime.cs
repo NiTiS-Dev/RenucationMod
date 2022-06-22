@@ -49,8 +49,8 @@ public class NekoSlime : ModNPC
 	}
 	public override void SetDefaults()
 	{
-		NPC.width = 25;
-		NPC.height = 20;
+		NPC.width = 20;
+		NPC.height = 16;
 		NPC.damage = 75;
 		NPC.defense = 20;
 		NPC.lifeMax = 850;
