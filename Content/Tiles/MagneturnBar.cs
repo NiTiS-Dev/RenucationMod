@@ -10,6 +10,7 @@ using Terraria.ObjectData;
 namespace Renucation.Content.Tiles;
 public class MagneturnBar : ModTile 
 {
+	public static int ID => ModContent.TileType<MagneturnBar>();
 	public override void SetStaticDefaults()
 	{
 		Main.tileShine[Type] = 1100;

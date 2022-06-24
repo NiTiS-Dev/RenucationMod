@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 namespace Renucation.Content.Tiles;
 public class GalactiteStone : ModTile
 {
+	public static int ID => ModContent.TileType<GalactiteStone>();
 	public override void SetStaticDefaults()
 	{
 		Main.tileSolid[Type] = true;

@@ -17,7 +17,6 @@ public class OceanRider : ModItem
 	public override void SetStaticDefaults()
 	{
 		DisplayName.SetDefault("Ocean Rider");
-		Tooltip.SetDefault("The ocean provides you with bullets");
 
 		SacrificeTotal = 1;
 	}

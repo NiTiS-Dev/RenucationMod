@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 namespace Renucation.Content.NPCs;
 public class NekoSlime : ModNPC
 {
-	// TODO: Resprite and change texture style to other slime!!!
+	public static int ID => ModContent.NPCType<NekoSlime>();
 	public override void SetStaticDefaults()
 	{
 		DisplayName.SetDefault("Neko Slime");
@@ -59,7 +59,7 @@ public class NekoSlime : ModNPC
 		NPC.value = 450f;
 		NPC.knockBackResist = 0.25f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
-		NPC.Size *= 2.25f;
+		NPC.Size *= 1.25f; //IDK
 
 		AIType = NPCID.BlueSlime;
 		AnimationType = NPCID.ToxicSludge;
@@ -71,7 +71,7 @@ public class NekoSlime : ModNPC
 	public override void ModifyNPCLoot(NPCLoot npcLoot)
 	{
 		npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 1, 3));
-		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.CatEars, 512, 256));
+		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.CatEars, 1000, 500)); // Lol
 	}
 
 	public override float SpawnChance(NPCSpawnInfo spawnInfo)
@@ -82,6 +82,6 @@ public class NekoSlime : ModNPC
 	{
 		bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
 				new FlavorTextBestiaryInfoElement("Mods.Renucation.BestiaryInfo.NekoSlime")
-			});
+		});
 	}
 }

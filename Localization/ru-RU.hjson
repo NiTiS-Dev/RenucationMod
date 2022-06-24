@@ -14,9 +14,11 @@ Mods: {
 			}
 		}
 		ItemName: {
-			OceanRider: Мореплаватель
 			SoulofMech: Эссенция механизма
+			OceanRider: Мореплаватель
+			KrabRave: Крабовый рэйв
 			Vibraxe: Вибракс
+			PotionofCompassion: Зелье сожаления
 		}
 		ItemTooltip: {
 			OceanRider: Океан не оставит вас без патронов
@@ -24,6 +26,10 @@ Mods: {
 				'''
 				Эссенция древних механизмов
 				Соединение душ террора
+				'''
+			PotionofCompassion:
+				'''
+				Вы чувствуете боль ваших врагов
 				'''
 		}
 		BuffName: {

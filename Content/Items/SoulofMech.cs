@@ -11,9 +11,6 @@ public class SoulofMech : ModItem
 {
 	public override void SetStaticDefaults()
 	{
-		DisplayName.SetDefault("Soul of Mechanism");
-		Tooltip.SetDefault("'The essence of the elder mechanism'\nCompoud of terror mechinism souls");
-
 		// Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 		Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		ItemID.Sets.AnimatesAsSoul[Item.type] = true; 

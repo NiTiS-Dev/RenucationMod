@@ -1,5 +1,6 @@
 ﻿v0.0.0.7:
 - Added "Galactite Stone"
+- Added "Potion of Compassion"
 
 v0.0.0.6:
 - Added "Vibraxe"

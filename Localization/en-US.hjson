@@ -14,9 +14,23 @@ Mods: {
 			}
 		}
 		ItemName: {
-			Vibraxe: Vibraxe
-			KrabRave: KrabRave
+			SoulofMech: Soul of Mechanism
 			OceanRider: Ocean Rider
+			KrabRave: Krab Rave
+			Vibraxe: Vibraxe
+			PotionofCompassion: Potion of Compassion
+		}
+		ItemTooltip: {
+			OceanRider: The ocean provides you with bullets
+			SoulofMech:
+				'''
+				'The essence of the elder mechanism'
+				Compoud of terror mechinism souls
+				'''
+			PotionofCompassion:
+				'''
+				You feel the pain of your enemies
+				'''
 		}
 		BuffName: {
 			CompassionDebuff: Compassion
