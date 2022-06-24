@@ -49,17 +49,17 @@ public class NekoSlime : ModNPC
 	}
 	public override void SetDefaults()
 	{
-		NPC.width = 20;
-		NPC.height = 16;
+		NPC.width = 22;
+		NPC.height = 17;
 		NPC.damage = 75;
-		NPC.defense = 20;
-		NPC.lifeMax = 850;
+		NPC.defense = 15;
+		NPC.lifeMax = 750;
 		NPC.HitSound = SoundID.NPCHit1;
-		NPC.DeathSound = SoundID.NPCDeath2;
+		NPC.DeathSound = SoundID.NPCDeath1;
 		NPC.value = 450f;
 		NPC.knockBackResist = 0.25f;
 		NPC.aiStyle = NPCAIStyleID.Slime;
-		NPC.Size *= 1.25f;
+		NPC.Size *= 2.25f;
 
 		AIType = NPCID.BlueSlime;
 		AnimationType = NPCID.ToxicSludge;
