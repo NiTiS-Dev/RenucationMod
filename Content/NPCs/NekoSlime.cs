@@ -71,6 +71,7 @@ public class NekoSlime : ModNPC
 	public override void ModifyNPCLoot(NPCLoot npcLoot)
 	{
 		npcLoot.Add(ItemDropRule.Common(ItemID.Gel, 1, 1, 3));
+		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.Vitamins, 200, 100));
 		npcLoot.Add(ItemDropRule.NormalvsExpert(ItemID.CatEars, 1000, 500)); // Lol
 	}
 
