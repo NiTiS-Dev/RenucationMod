@@ -1,5 +1,10 @@
 Mods: {
 	Renucation: {
+		WorldGen: {
+			Steps: {
+				MeteorsFinalize: Meteors finalize (temp msg)
+			}
+		}
 		Config: {
 			CraftsHeader: Recipes
 			WorldGenHeader: World Generation

@@ -14,13 +14,26 @@ using Renucation.Common.Configs;
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
-	public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
+	public override void ModifyHardmodeTasks(List<GenPass> list)
 	{
-		if (!ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration)
+		if (!IsEnabledINDEVGEN)
 			return;
 
-
-		//int IslandIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Floating Islands"));
+		list.Add(new PassLegacy("Renucation Meteors HM", MeteorGeneration));
+	}
+	private void MeteorGeneration(GenerationProgress progress, GameConfiguration config)
+	{
+		// Found x..x range for gen meteors
+		// Found y..y range for gen meteors
+		// Gen meteors
+		// Write msg for generation
+		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.MeteorsFinalize"), 128, 242, 225);
+	}
+	public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+	{
+		if (!IsEnabledINDEVGEN)
+			return;
 		int IslandIndex = tasks.Count - 1;
 		if (IslandIndex != -1)
 		{
