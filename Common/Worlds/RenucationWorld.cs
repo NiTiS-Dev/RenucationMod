@@ -14,15 +14,9 @@ using Renucation.Common.Configs;
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
+	public static readonly uint[] METEOR_RANGE_X = new uint[] { 500, 1000, 2200 };
 	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
-	public override void ModifyHardmodeTasks(List<GenPass> list)
-	{
-		if (!IsEnabledINDEVGEN)
-			return;
-
-		list.Add(new PassLegacy("Renucation Meteors HM", MeteorGeneration));
-	}
-	private void MeteorGeneration(GenerationProgress progress, GameConfiguration config)
+	private void MeteorGeneration() //TODO: subscribe before WoF killed
 	{
 		// Found x..x range for gen meteors
 		// Found y..y range for gen meteors
@@ -34,6 +28,7 @@ public class RenucationWorld : ModSystem
 	{
 		if (!IsEnabledINDEVGEN)
 			return;
+
 		int IslandIndex = tasks.Count - 1;
 		if (IslandIndex != -1)
 		{
@@ -73,6 +68,5 @@ public class RenucationWorld : ModSystem
 			new Actions.SetTile(TileID.Stone, true),
 			new Actions.PlaceWall(WallID.DirtUnsafe, true)
 		));
-		//WorldUtils.Gen(point, new Shapes.Slime(10), new Actions.PlaceTile( (ushort)ModContent.TileType<Content.Tiles.LaboratoryBlock>() ));
 	}
 }

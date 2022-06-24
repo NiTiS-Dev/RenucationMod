@@ -1,6 +1,7 @@
 ﻿v0.0.0.7:
 - Added "Galactite Stone"
 - Added "Potion of Compassion"
+- Fixed CRITICAL unnamed bug (When WoF been killed nothing happened)
 
 v0.0.0.6:
 - Added "Vibraxe"
