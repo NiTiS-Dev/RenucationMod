@@ -1,32 +1,150 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 
-using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using Terraria.GameContent.Generation;
-using System.Collections.Generic;
-using Terraria.WorldBuilding;
-using Terraria.Localization;
-using Terraria.IO;
 using Microsoft.Xna.Framework;
 using Renucation.Common.Configs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Terraria.GameContent.Generation;
+using Terraria.IO;
+using Terraria.WorldBuilding;
 
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
-	public static readonly uint[] MeteorRangeX = new uint[] { 500, 1000, 2200 };
-	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
-	public static void MeteorGeneration() //TODO: subscribe before WoF killed
+	public const int SafeZoneY = 45;
+	public const int ValidatorStepX = 5;
+	public static readonly int[] MeteorRangeX = new int[] { 370, 1100, 2200 };
+	public static readonly int[] MeteorRangeY = new int[] { 110, 250, 450 };
+	public static readonly int[] MeteorRare = new int[] { 450, 560, 670 };
+ 	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
+	public static bool MeteorGeneration()
 	{
 		if (!IsEnabledINDEVGEN)
-			return;
+			return false;
+		#region Found x..x range for gen meteors
+		// See here https://terraria.fandom.com/wiki/World_size for look world sizes
+		int meteorRangeSizeX = Main.maxTilesX switch
+		{
+			>= 8000 => MeteorRangeX[2],
+			>= 6000 => MeteorRangeX[1],
+			>= 3000 => MeteorRangeX[0],
+			_ => -1
+		};
+		int meteorRangeSizeY = Main.maxTilesY switch
+		{
+			>= 2000 => MeteorRangeY[2],
+			>= 1500 => MeteorRangeY[1],
+			>= 1000 => MeteorRangeY[0],
+			_ => -1
+		};
+		int meteorRarity =  Main.maxTilesX switch
+		{
+			>= 8000 => MeteorRare[2],
+			>= 6000 => MeteorRare[1],
+			>= 3000 => MeteorRare[0],
+			_ => -1
+		};
 
+		if (meteorRangeSizeX == -1 || meteorRangeSizeY == -1 || meteorRarity == -1) // Very small world
+			return false;
 
-		// Found x..x range for gen meteors
-		// Found y..y range for gen meteors
-		// Gen meteors
-		// Write msg for generation
+		bool[] validPlacesX = new bool[Main.maxTilesX];
+
+		for (int x = 0; x < Main.maxTilesX; x++)
+		{
+			validPlacesX[x] = true;
+			for (int y = SafeZoneY; y < meteorRangeSizeY + SafeZoneY; y++) // Plus 20 blocks for safe
+			{
+				Tile tile = Main.tile[x, y];
+
+				if (tile.HasTile)
+				{
+					validPlacesX[x] = false;
+				}
+			}
+		}
+
+		int beginX = -1, endX = -1;
+		int debug_maxSize = 0;
+
+		bool __skip = false;
+		for (int x = 0; x < Main.maxTilesX; x += ValidatorStepX)
+		{
+			if (__skip)
+				break;
+
+			if (x + meteorRangeSizeX > Main.maxTilesX)
+				break;
+			int debug_currentSize = 0;
+			for (int alsoX = x; alsoX < x + meteorRangeSizeX; alsoX++)
+			{
+				if (!validPlacesX[alsoX])
+				{
+					break;
+				}
+				else
+				{
+					debug_currentSize++;
+					if (alsoX + 1 == x + meteorRangeSizeX)
+					{
+						beginX = x;
+						endX = alsoX + 1;
+						if (WorldGen.genRand.NextBool(3)) // Randomize meteors location
+							__skip = true;
+					}
+				}
+			}
+		}
+		Main.NewText($"DEBUG Maximum size found: {debug_maxSize} Valid places: {validPlacesX.Count(x => x)}");
+
+		if (beginX == endX)
+		{
+			return false; // Found no space
+		}
+
+		#endregion
+		#region Gen meteors
+
+		int beginY = SafeZoneY;
+		int endY = SafeZoneY + meteorRangeSizeY;
+
+		int spawnedMeteors = 0;
+		List<Rectangle> regions = new(Main.maxTilesX > 4000 ? 256 : 128);
+		for (int y = beginY; y < endY; y++)
+		{
+			for (int x = beginX; x < endX; x++)
+			{
+
+				int sizeX = WorldGen.genRand.Next(12, 34);
+				int sizeY = WorldGen.genRand.Next(7, 24);
+
+				if (x + sizeX > endX || y + sizeY > endY)
+					continue;
+
+				if (WorldGen.genRand.NextBool(meteorRarity))
+				{
+					if (sizeX + x > endX) //Out of bounds
+						continue;
+
+					if (regions.All(zi => !zi.Contains(x, y) && !zi.Contains(x + sizeX, y + sizeY)))
+					{
+						PlaceMeteor(new(x, y), (uint)sizeX, (uint)sizeY);
+						regions.Add(new(x, y, sizeX, sizeY));
+						spawnedMeteors++;
+					}
+				}
+			}
+		}
+
+		Main.NewText($"DEBUG Spawned meteors: {spawnedMeteors}", 128, 242, 225);
+
+		if (spawnedMeteors == 0)
+			return false;
+
+		#endregion
 		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.MeteorsFinalize"), 128, 242, 225);
+		return true;
 	}
 	public static void PlaceMeteor(Point position, uint sizeX, uint sizeY)
 	{
@@ -43,9 +161,10 @@ public class RenucationWorld : ModSystem
 		if (IslandIndex != -1)
 		{
 			tasks.Insert(IslandIndex + 1, new PassLegacy("Renucation Laboratory", LaboratoryGeneration));
-		} else
+		}
+		else
 		{
-			throw new System.Exception("Where my step?");
+			throw new Exception("Where my step?");
 		}
 	}
 	private void LaboratoryGeneration(GenerationProgress progress, GameConfiguration config)

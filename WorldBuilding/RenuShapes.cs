@@ -85,10 +85,7 @@ public static class RenuShapes
 						pool[stepX, pseudoY] = true;
 					}
 				}
-				Main.NewText($"[{stepX}]: {progressX}  H:{hY} L:{lY} ProgLimitH:{progressLimitH} ProgLimitL:{progressLimitL}");
 			}
-
-
 
 			for (int x = 0; x < this.sizeX; x++)
 			{

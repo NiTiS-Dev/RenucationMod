@@ -25,6 +25,9 @@ Mods: {
 			KrabRave: Крабовый рэйв
 			Vibraxe: Вибракс
 			PotionofCompassion: Зелье сожаления
+			DioliteOre: Диолитовая руда
+			DioliteBar: Диолитовый слиток
+			GalactiteStone: Галактический камень
 		}
 		ItemTooltip: {
 			OceanRider: Океан не оставит вас без патронов
@@ -37,6 +40,9 @@ Mods: {
 				'''
 				Вы чувствуете боль ваших врагов
 				'''
+		}
+		MapObject: {
+			DioliteOre: Диолитовая руда
 		}
 		BuffName: {
 			CompassionDebuff: Сожаление

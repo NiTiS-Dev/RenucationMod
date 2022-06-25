@@ -4,6 +4,7 @@ Mods: {
 			Steps: {
 				MeteorsFinalize: Meteorite fragments frozen in the sky
 				IslandGeneration: Laboratory Island Generation
+				LaboratoryOpen: The doors of the laboratory collapsed under the roar of a mechanical creature
 			}
 		}
 		Config: {
@@ -25,6 +26,9 @@ Mods: {
 			KrabRave: Krab Rave
 			Vibraxe: Vibraxe
 			PotionofCompassion: Potion of Compassion
+			DioliteOre: Diolite Ore
+			DioliteBar: Diolite Bar
+			GalactiteStone: Galactite Stone
 		}
 		ItemTooltip: {
 			OceanRider: The ocean provides you with bullets
@@ -37,6 +41,9 @@ Mods: {
 				'''
 				You feel the pain of your enemies
 				'''
+		}
+		MapObject: {
+			DioliteOre: Diolite Ore
 		}
 		BuffName: {
 			CompassionDebuff: Compassion

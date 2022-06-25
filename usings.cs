@@ -1,6 +1,7 @@
 ﻿global using Terraria;
 global using Terraria.ID;
 global using Terraria.ModLoader;
+global using Terraria.Localization;
 
 global using Renucation.Common;
 global using Renucation.Content;

@@ -1,5 +1,6 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Renucation.Content.Tiles;
 public class DioliteOre : ModTile
@@ -9,7 +10,11 @@ public class DioliteOre : ModTile
 	public override void SetStaticDefaults()
 	{
 		TileID.Sets.Ore[Type] = true;
+
 		TileID.Sets.BlockMergesWithMergeAllBlock[Type] = true;
+		Main.tileMerge[Type][GalactiteStone.ID] = true;
+		Main.tileMerge[GalactiteStone.ID][Type] = true;
+
 		Main.tileSolid[Type] = true;
 		Main.tileBlockLight[Type] = true;
 		Main.tileLighted[Type] = true;
@@ -30,6 +35,14 @@ public class DioliteOre : ModTile
 
 		ModTranslation name = CreateMapEntryName();
 		AddMapEntry(new Color(40, 237, 234), name);
+	}
+	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+	{
+		float re = (float)Main.maxTilesY / j;
+		re = Math.Min(re + 0.2f, 1f);
+		r = 0.16f * re;
+		g = 0.92f * re;
+		b = 0.90f * re;
 	}
 	public override bool CanExplode(int i, int j)
 		=> false;

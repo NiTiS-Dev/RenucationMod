@@ -37,15 +37,19 @@ public class EnemyKillSystem : ModSystem
 		if (meteorsGenerated)
 			return;
 
-		Worlds.RenucationWorld.MeteorGeneration();
-		meteorsGenerated = true;
+		if (Worlds.RenucationWorld.MeteorGeneration())
+			meteorsGenerated = true;
+		else
+			Main.NewText("Meteors disapear", 244, 10, 10);
 	}
 	public void UnlockLaboratory()
 	{
 		if (laboratoryUnlocked)
 			return;
 
-		Main.NewText("The doors of the laboratory collapsed under the roar of a mechanical creature");
+		
+
+		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.LaboratoryOpen"), 128, 242, 225);
 		laboratoryUnlocked = true;
 	}
 }
