@@ -24,6 +24,12 @@ public class RenucationWorld : ModSystem
 		// Write msg for generation
 		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.MeteorsFinalize"), 128, 242, 225);
 	}
+	public static void PlaceMeteor(Point position, uint sizeX, uint sizeY)
+	{
+		WorldUtils.Gen(position, new RenuShapes.Meteor(sizeX, sizeY), Actions.Chain(
+			new Actions.SetTile((ushort)Content.Tiles.GalactiteStone.ID, true)
+		));
+	}
 	public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 	{
 		if (!IsEnabledINDEVGEN)
