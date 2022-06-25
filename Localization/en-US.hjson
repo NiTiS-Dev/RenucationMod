@@ -2,7 +2,8 @@ Mods: {
 	Renucation: {
 		WorldGen: {
 			Steps: {
-				MeteorsFinalize: Meteors finalize (temp msg)
+				MeteorsFinalize: Meteorite fragments frozen in the sky
+				IslandGeneration: Laboratory Island Generation
 			}
 		}
 		Config: {

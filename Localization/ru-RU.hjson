@@ -1,5 +1,11 @@
 Mods: {
 	Renucation: {
+		WorldGen: {
+			Steps: {
+				MeteorsFinalize: Осколки метеорита застыли в небе
+				IslandGeneration: Генерация лаборатории
+			}
+		}
 		Config: {
 			CraftsHeader: Рецепты
 			WorldGenHeader: Генерация мира

@@ -1,13 +1,11 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace Renucation.Content.Tiles;
 public class GalactiteStone : ModTile
 {
 	public static int ID => ModContent.TileType<GalactiteStone>();
+	public static ushort ShortID => (ushort)ModContent.TileType<GalactiteStone>();
 	public override void SetStaticDefaults()
 	{
 		Main.tileSolid[Type] = true;

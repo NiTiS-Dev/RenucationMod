@@ -19,9 +19,9 @@ public class MeteorSpawner : ModItem
 		Item.consumable = false;
 		Item.autoReuse = false;
 	}
-	public override bool? UseItem(Player player)
+	public override Nullable<bool> UseItem(Player player)
 	{
-		RenucationWorld.PlaceMeteor(player.GetPoint() - new Point(10, 10), 25, 16);
+		RenucationWorld.PlaceMeteor(player.GetPoint() - new Point(0, 10), 25, 16);
 		return true;
 	}
 }

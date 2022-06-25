@@ -1,13 +1,4 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 namespace Renucation.Content.Items.Placeable;
 public class DioliteBar : ModItem
 {
@@ -36,9 +27,9 @@ public class DioliteBar : ModItem
 
 	public override void AddRecipes()
 	{
-		//CreateRecipe()
-		//	.AddIngredient<ExampleOre>(4)
-		//	.AddTile(TileID.Furnaces)
-		//	.Register();
+		CreateRecipe()
+			.AddIngredient<DioliteOre>(2)
+			.AddTile(TileID.AdamantiteForge)
+			.Register();
 	}
 }

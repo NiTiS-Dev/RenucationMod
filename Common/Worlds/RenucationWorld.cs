@@ -14,10 +14,14 @@ using Renucation.Common.Configs;
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
-	public static readonly uint[] METEOR_RANGE_X = new uint[] { 500, 1000, 2200 };
+	public static readonly uint[] MeteorRangeX = new uint[] { 500, 1000, 2200 };
 	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
-	private void MeteorGeneration() //TODO: subscribe before WoF killed
+	public static void MeteorGeneration() //TODO: subscribe before WoF killed
 	{
+		if (!IsEnabledINDEVGEN)
+			return;
+
+
 		// Found x..x range for gen meteors
 		// Found y..y range for gen meteors
 		// Gen meteors
@@ -27,7 +31,7 @@ public class RenucationWorld : ModSystem
 	public static void PlaceMeteor(Point position, uint sizeX, uint sizeY)
 	{
 		WorldUtils.Gen(position, new RenuShapes.Meteor(sizeX, sizeY), Actions.Chain(
-			new Actions.SetTile((ushort)Content.Tiles.GalactiteStone.ID, true)
+			new Actions.SetTile(Content.Tiles.GalactiteStone.ShortID, true)
 		));
 	}
 	public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
