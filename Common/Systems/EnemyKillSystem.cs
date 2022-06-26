@@ -7,8 +7,8 @@ using Terraria.ModLoader.IO;
 namespace Renucation.Common.Systems;
 public class EnemyKillSystem : ModSystem
 {
-	private bool laboratoryUnlocked;
-	private bool meteorsGenerated;
+	private bool laboratoryUnlocked = false;
+	private bool meteorsGenerated = false;
 	public override void OnWorldLoad()
 	{
 		On.Terraria.NPC.DoDeathEvents_BeforeLoot += (a1, a2, a3) =>
@@ -25,12 +25,12 @@ public class EnemyKillSystem : ModSystem
 	public override void SaveWorldData(TagCompound tag)
 	{
 		tag.Set("renucationLaboratoryUnlocked", laboratoryUnlocked, true);
-		tag.Set("meteorsGenerated", meteorsGenerated, true);
+		tag.Set("meteorsGeneratedV2", meteorsGenerated, true);
 	}
 	public override void LoadWorldData(TagCompound tag)
 	{
 		laboratoryUnlocked = tag.GetBool("renucationLaboratoryUnlocked");
-		meteorsGenerated = tag.GetBool("meteorsGenerated");
+		meteorsGenerated = tag.GetBool("meteorsGeneratedV2");
 	}
 	public void GenerateMeteors()
 	{

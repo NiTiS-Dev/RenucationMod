@@ -9,6 +9,7 @@ public class GalactiteStone : ModTile
 	public override void SetStaticDefaults()
 	{
 		Main.tileSolid[Type] = true;
+		TileID.Sets.CanBeClearedDuringOreRunner[Type] = true;
 		Main.tileMerge[LaboratoryBlock.ID][Type] = true;
 		Main.tileMerge[Type][LaboratoryBlock.ID] = true;
 

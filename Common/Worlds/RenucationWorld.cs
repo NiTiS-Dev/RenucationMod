@@ -15,7 +15,7 @@ public class RenucationWorld : ModSystem
 	#region WorldGen constants
 	public const int SafeZoneY = 45;
 	public const int ValidatorStepX = 5;
-	private const int OreRarity = 10;
+	private const int OreRarity = 120;
 	public static readonly int[] MeteorRangeX = new int[] { 370, 1100, 2200 };
 	public static readonly int[] MeteorRangeY = new int[] { 110, 250, 450 };
 	public static readonly int[] MeteorRare = new int[] { 450, 560, 670 };
@@ -153,8 +153,8 @@ public class RenucationWorld : ModSystem
 					debug_oreCount++;
 					WorldGen.OreRunner(
 						x, y,
-						20,
-						20,
+						6,
+						7,
 						Content.Tiles.DioliteOre.ShortID
 						);
 				}
