@@ -12,12 +12,15 @@ using Terraria.WorldBuilding;
 namespace Renucation.Common.Worlds;
 public class RenucationWorld : ModSystem
 {
+	#region WorldGen constants
 	public const int SafeZoneY = 45;
 	public const int ValidatorStepX = 5;
+	private const int OreRarity = 10;
 	public static readonly int[] MeteorRangeX = new int[] { 370, 1100, 2200 };
 	public static readonly int[] MeteorRangeY = new int[] { 110, 250, 450 };
 	public static readonly int[] MeteorRare = new int[] { 450, 560, 670 };
- 	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
+	#endregion
+	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
 	public static bool MeteorGeneration()
 	{
 		if (!IsEnabledINDEVGEN)
@@ -38,7 +41,7 @@ public class RenucationWorld : ModSystem
 			>= 1000 => MeteorRangeY[0],
 			_ => -1
 		};
-		int meteorRarity =  Main.maxTilesX switch
+		int meteorRarity = Main.maxTilesX switch
 		{
 			>= 8000 => MeteorRare[2],
 			>= 6000 => MeteorRare[1],
@@ -95,6 +98,7 @@ public class RenucationWorld : ModSystem
 					}
 				}
 			}
+			debug_maxSize = Math.Max(debug_maxSize, debug_currentSize);
 		}
 		Main.NewText($"DEBUG Maximum size found: {debug_maxSize} Valid places: {validPlacesX.Count(x => x)}");
 
@@ -111,7 +115,7 @@ public class RenucationWorld : ModSystem
 
 		int spawnedMeteors = 0;
 		List<Rectangle> regions = new(Main.maxTilesX > 4000 ? 256 : 128);
-		for (int y = beginY; y < endY; y++)
+		for (int y = beginY; y < endY; y++) // Meteor generation
 		{
 			for (int x = beginX; x < endX; x++)
 			{
@@ -137,7 +141,27 @@ public class RenucationWorld : ModSystem
 			}
 		}
 
-		Main.NewText($"DEBUG Spawned meteors: {spawnedMeteors}", 128, 242, 225);
+		Main.NewText($"DEBUG BeginX {beginX} EndX {endX}", 128, 242, 225);
+
+		int debug_oreCount = 0;
+		for (int x = beginX; x < endX; x++) // Ore generation
+		{
+			for (int y = beginY; y < endY; y++)
+			{
+				if (WorldGen.genRand.NextBool(OreRarity))
+				{
+					debug_oreCount++;
+					WorldGen.OreRunner(
+						x, y,
+						30,
+						30,
+						Content.Tiles.DioliteOre.ShortID
+						);
+				}
+			}
+		}
+
+		Main.NewText($"DEBUG Spawned meteors: {spawnedMeteors} Spawned ores: {debug_oreCount}", 128, 242, 225);
 
 		if (spawnedMeteors == 0)
 			return false;
