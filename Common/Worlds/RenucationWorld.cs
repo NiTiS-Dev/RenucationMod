@@ -153,8 +153,8 @@ public class RenucationWorld : ModSystem
 					debug_oreCount++;
 					WorldGen.OreRunner(
 						x, y,
-						30,
-						30,
+						20,
+						20,
 						Content.Tiles.DioliteOre.ShortID
 						);
 				}
