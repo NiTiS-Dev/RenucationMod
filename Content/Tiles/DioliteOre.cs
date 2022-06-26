@@ -5,8 +5,8 @@ using System;
 namespace Renucation.Content.Tiles;
 public class DioliteOre : ModTile
 {
-	public static int ID => ModContent.TileType<GalactiteStone>();
-	public static ushort ShortID => (ushort)ModContent.TileType<GalactiteStone>();
+	public static int ID => ModContent.TileType<DioliteOre>();
+	public static ushort ShortID => (ushort)ModContent.TileType<DioliteOre>();
 	public override void SetStaticDefaults()
 	{
 		TileID.Sets.Ore[Type] = true;
