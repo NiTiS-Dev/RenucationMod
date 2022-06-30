@@ -10,7 +10,6 @@ public class ExperimentalHeart : ModItem
 
 	public override void SetStaticDefaults()
 	{
-
 		SacrificeTotal = 5;
 	}
 
