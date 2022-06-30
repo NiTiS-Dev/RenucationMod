@@ -4,6 +4,7 @@ global using Terraria.ModLoader;
 global using Terraria.Localization;
 
 global using Renucation.Common;
+global using Renucation.Common.Players;
 global using Renucation.Content;
 global using Renucation.WorldBuilding;
 using Microsoft.Xna.Framework;

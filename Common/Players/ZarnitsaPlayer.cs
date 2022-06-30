@@ -13,7 +13,7 @@ public class ZarnitsaPlayer : ModPlayer
 	}
 	public override void PostUpdate()
 	{
-		if (killed)
+		if (killed && usedZarnitsa) //Restore full HP after death if Zarnitsa used
 		{
 			Player.statLife = Player.statLifeMax2;
 			killed = false;
