@@ -1,4 +1,6 @@
-Renucation Vetta test
+[c/FF1111:Warning]
+Mod still in developing and may contain bugs, critical errors and disbalance
+If you found one, please describe in Bugs & Fixes discusion or Issue page
 
 This project is Open-Source
 Repository: https://github.com/NiTiS-Dev/RenucationMod
@@ -7,7 +9,6 @@ If you want to join develop this project
 Discord: @NiTiSon#3995
 Server: https://discord.gg/GhBJpkGmP4
 
-!!! Warning
-Laboratory are still in developing
-
 Changelog here: https://github.com/NiTiS-Dev/RenucationMod/blob/singleton/changelog.txt
+Issues Page: https://github.com/NiTiS-Dev/RenucationMod/issues
+Bugs & Fixes: https://steamcommunity.com/workshop/filedetails/discussion/2821766147/5260781909048560506
