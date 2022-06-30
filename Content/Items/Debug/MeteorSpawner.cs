@@ -5,12 +5,10 @@ using System;
 
 namespace Renucation.Content.Items.Debug;
 
-public class MeteorSpawner : ModItem
+public class MeteorSpawner : DebugItem
 {
-	public override void SetStaticDefaults()
-	{
-		SacrificeTotal = Int32.MaxValue;
-	}
+	public override string ItemName => "Meteor Spawner";
+
 	public override void SetDefaults()
 	{
 		Item.useTime = 5;
@@ -19,7 +17,7 @@ public class MeteorSpawner : ModItem
 		Item.consumable = false;
 		Item.autoReuse = false;
 	}
-	public override Nullable<bool> UseItem(Player player)
+	public override bool? UseItem(Player player)
 	{
 		RenucationWorld.PlaceMeteor(player.GetPoint() - new Point(0, 10), 25, 16);
 		return true;

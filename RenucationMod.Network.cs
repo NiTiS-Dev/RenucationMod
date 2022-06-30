@@ -19,12 +19,12 @@ public partial class RenucationMod
 		switch (msgType)
 		{
 			case MessageType.RenucationPlayerSyncPlayer:
-				byte playernumber = reader.ReadByte();
-				RenucationPlayer renucationPlayer = Main.player[playernumber].GetModPlayer<RenucationPlayer>();
-				renucationPlayer.usedExperementalHeart = reader.ReadInt32();
+				ushort playernumber = reader.ReadUInt16();
+				ExperimentalHeartPlayer renucationPlayer = Main.player[playernumber].GetModPlayer<ExperimentalHeartPlayer>();
+				renucationPlayer.usedExperimentalHeart = reader.ReadInt32();
 				break;
 			default:
-				Logger.WarnFormat("ExampleMod: Unknown Message type: {0}", msgType);
+				Logger.WarnFormat("Renucation: Unknown Message type: {0}", msgType);
 				break;
 		}
 	}

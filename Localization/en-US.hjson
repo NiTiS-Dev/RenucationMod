@@ -1,5 +1,8 @@
 Mods: {
 	Renucation: {
+		Generic: {
+			AddMaxHealth: "Permanently increases maximum life by {0}"
+		}
 		WorldGen: {
 			Steps: {
 				MeteorsFinalize: Meteorite fragments frozen in the sky

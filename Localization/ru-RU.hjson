@@ -1,5 +1,8 @@
 Mods: {
 	Renucation: {
+		Generic: {
+			AddMaxHealth: "Навсегда увеличивает максимальный уровень жизни на {0}"
+		}
 		WorldGen: {
 			Steps: {
 				MeteorsFinalize: Осколки метеорита застыли в небе

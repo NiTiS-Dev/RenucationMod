@@ -61,7 +61,7 @@ public class Vibraxe : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddIngredient<Placeable.DioliteBar>(14)
+			.AddIngredient<Placeable.DioliteBar>(18)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}
