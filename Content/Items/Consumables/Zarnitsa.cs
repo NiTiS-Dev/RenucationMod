@@ -17,17 +17,22 @@ public class Zarnitsa : ModItem
 		Item.useAnimation = 30;
 		Item.useTime = 30;
 		Item.useStyle = ItemUseStyleID.HoldUp;
-		Item.consumable = true;
+		Item.consumable = false;
 	}
 	public override bool? UseItem(Player player)
 	{
 		ZarnitsaPlayer playerz = player.GetModPlayer<ZarnitsaPlayer>();
 
-		if (!playerz.usedZarnitsa)
+		if (playerz.IsZarnitsaUsed)
 		{
-			playerz.usedZarnitsa = true;
-			return true;
+			playerz.DisableZarnitsa();
+			Main.NewText("Zarnitsa disabled!");
+		}else
+		{
+			playerz.EnableZarnitsa();
+			Main.NewText("Zarnitsa enabled!");
 		}
-		return false;
+
+		return true;
 	}
 }

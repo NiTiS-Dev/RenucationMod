@@ -7,6 +7,8 @@ public class RenucationConfig : ModConfig
 {
 	public override ConfigScope Mode => ConfigScope.ServerSide;
 
+	public static RenucationConfig Instance => ModContent.GetInstance<RenucationConfig>();
+
 	[Header("$Mods.Renucation.Config.CraftsHeader")]
 	[Label("$Mods.Renucation.Config.WaterBootsCraft.Label")]
 	[Tooltip("$Mods.Renucation.Config.WaterBootsCraft.Tooltip")]

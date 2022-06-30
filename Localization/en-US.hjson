@@ -33,6 +33,7 @@ Mods: {
 			DioliteBar: Diolite Bar
 			GalactiteStone: Galactite Stone
 			PlanterasBulb: Suspicious Looking Flower
+			Zarnitsa: Zarnitsa
 		}
 		ItemTooltip: {
 			OceanRider: The ocean provides you with bullets
@@ -49,6 +50,7 @@ Mods: {
 				'''
 				Summons Plantera
 				'''
+			Zarnitsa: You will respawn with full health
 		}
 		MapObject: {
 			DioliteOre: Diolite Ore

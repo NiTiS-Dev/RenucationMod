@@ -32,6 +32,7 @@ Mods: {
 			DioliteBar: Диолитовый слиток
 			GalactiteStone: Галактический камень
 			PlanterasBulb: Подозрительно выглядящий цветок
+			Zarnitsa: Зарница
 		}
 		ItemTooltip: {
 			OceanRider: Океан не оставит вас без патронов
@@ -48,6 +49,7 @@ Mods: {
 				'''
 				Призывает плантеру
 				'''
+			Zarnitsa: Вы возрождаетесь с полным здоровьем
 		}
 		MapObject: {
 			DioliteOre: Диолитовая руда
