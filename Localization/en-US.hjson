@@ -32,6 +32,7 @@ Mods: {
 			DioliteOre: Diolite Ore
 			DioliteBar: Diolite Bar
 			GalactiteStone: Galactite Stone
+			PlanterasBulb: Suspicious Looking Flower
 		}
 		ItemTooltip: {
 			OceanRider: The ocean provides you with bullets
@@ -43,6 +44,10 @@ Mods: {
 			PotionofCompassion:
 				'''
 				You feel the pain of your enemies
+				'''
+			PlanterasBulb:
+				'''
+				Summons Plantera
 				'''
 		}
 		MapObject: {
