@@ -1,9 +1,13 @@
 ﻿v0.0.0.7:
-- Added "Galactite Stone"
-- Added "Diolite Ore"
-- Added "Potion of Compassion"
+- Added Galactite Stone
+- Added Diolite Ore
+- Added Potion of Compassion
 - Fixed CRITICAL unnamed bug (When WoF been killed nothing happened)
 - Added Meteor generator (required enable INDEV generation)
+- Added Suspicious Looking Flower
+- Added Experemental Heart
+- New logo
+
 
 v0.0.0.6:
 - Added "Vibraxe"

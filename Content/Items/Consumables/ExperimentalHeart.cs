@@ -1,5 +1,6 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace Renucation.Content.Items.Consumables;
 public class ExperimentalHeart : ModItem
@@ -21,6 +22,10 @@ public class ExperimentalHeart : ModItem
 	public override bool CanUseItem(Player player)
 	{
 		return player.statLifeMax >= 500 && player.GetModPlayer<ExperimentalHeartPlayer>().usedExperimentalHeart < Maximum;
+	}
+	public override void ModifyTooltips(List<TooltipLine> tooltips)
+	{
+		tooltips.Add(new TooltipLine(Mod, "Tooltip2", System.String.Format(Language.GetTextValue("Mods.Renucation.Generic.AddMaxHealth"), LifePerOnce) ));
 	}
 	public override bool? UseItem(Player player)
 	{
