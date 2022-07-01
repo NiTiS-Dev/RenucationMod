@@ -11,7 +11,7 @@ using Terraria.ModLoader;
 namespace Renucation.Content.Prefixes;
 public class ConfidentialPrefix : ModPrefix
 {
-	public override PrefixCategory Category => PrefixCategory.Melee;
+	public override PrefixCategory Category => PrefixCategory.AnyWeapon;
 
 	public override float RollChance(Item item)
 	{

@@ -1,12 +1,6 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Renucation.Content.Items.Weapons;
+
 public class Verblassen : ModItem
 {
 	public override void SetStaticDefaults()
@@ -16,18 +10,28 @@ public class Verblassen : ModItem
 
 	public override void SetDefaults()
 	{
-		Item.DefaultToWhip(ModContent.ProjectileType<Projectiles.DioliteWhipProjectile>(), 20, 2, 4);
+		Item.DamageType = DamageClass.SummonMeleeSpeed;
+		Item.damage = 51;
+		Item.knockBack = 3.5f;
 
+		Item.shoot = ModContent.ProjectileType<Projectiles.DioliteWhip>();
 		Item.shootSpeed = 4;
 		Item.rare = Rarities.LaboratoryRarity.ID;
 
-		Item.channel = true;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 25;
+		Item.useAnimation = 25;
+		Item.UseSound = SoundID.Item152;
+		Item.channel = false;
+		Item.noMelee = true;
+		Item.noUseGraphic = true;
 	}
 
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddIngredient<Placeable.DioliteBar>(18)
+			.AddIngredient<Placeable.DioliteBar>(14)
+			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Terraria.GameContent;
 
 namespace Renucation.Content.Projectiles;
-public class DioliteWhipProjectile : ModProjectile
+public class DioliteWhip : ModProjectile
 {
 	public override void SetStaticDefaults()
 	{
@@ -16,8 +16,10 @@ public class DioliteWhipProjectile : ModProjectile
 	public override void SetDefaults()
 	{
 		Projectile.DefaultToWhip();
-		Projectile.WhipSettings.Segments = 35;
-		Projectile.WhipSettings.RangeMultiplier = 1.78f;
+		Projectile.WhipSettings.Segments = 22;
+		Projectile.WhipSettings.RangeMultiplier = 1.95f;
+
+		Projectile.ownerHitCheck = false; // Hit throw walls
 	}
 
 	private float Timer
@@ -59,8 +61,9 @@ public class DioliteWhipProjectile : ModProjectile
 
 	public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 	{
-		target.AddBuff(BuffID.Burning, 240);
+		target.AddBuff(ModContent.BuffType<Buffs.CompassionDebuff>(), 4 * 60);
 		Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
+		//Main.player[Projectile.owner].AddBuff();
 	}
 
 	private void DrawLine(List<Vector2> list)
