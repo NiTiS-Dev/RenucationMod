@@ -36,6 +36,10 @@ public class DioliteOre : ModTile
 		ModTranslation name = CreateMapEntryName();
 		AddMapEntry(new Color(40, 237, 234), name);
 	}
+	public override void FloorVisuals(Player player)
+	{
+
+	}
 	public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 	{
 		float re = (float)Main.maxTilesY / j;
