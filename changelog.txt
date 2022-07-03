@@ -1,7 +1,9 @@
 ﻿v0.0.1:
 - Added Verblassen
 - Added The Table Mount
-- Add Normal texture for Diolite ore
+- Added Normal texture for Diolite ore
+- Diolite ore now drops right item
+- Added Meteor Belt biome
 
 v0.0.0.7:
 - Added Galactite Stone
