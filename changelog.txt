@@ -1,5 +1,7 @@
 ﻿v0.0.1:
 - Added Verblassen
+- Added The Table Mount
+- Add Normal texture for Diolite ore
 
 v0.0.0.7:
 - Added Galactite Stone

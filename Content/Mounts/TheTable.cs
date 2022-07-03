@@ -14,16 +14,16 @@ public class TheTable : ModMount
 	public override void SetStaticDefaults()
 	{
 		// Movement
-		MountData.jumpHeight = 42; // How high the mount can jump.
+		MountData.jumpHeight = 36; // How high the mount can jump.
 		MountData.acceleration = 0.235f; // The rate at which the mount speeds up.
-		MountData.jumpSpeed = 8f; // The rate at which the player and mount ascend towards (negative y velocity) the jump height when the jump button is presssed.
+		MountData.jumpSpeed = 6.5f; // The rate at which the player and mount ascend towards (negative y velocity) the jump height when the jump button is presssed.
 		MountData.blockExtraJumps = false; // Determines whether or not you can use a double jump (like cloud in a bottle) while in the mount.
 		MountData.constantJump = true; // Allows you to hold the jump button down.
-		MountData.heightBoost = 34; // Height between the mount and the ground
-		MountData.fallDamage = 0.5f; // Fall damage multiplier.
-		MountData.runSpeed = 13f; // The speed of the mount
-		MountData.dashSpeed = 8f; // The speed the mount moves when in the state of dashing.
-		MountData.flightTimeMax = 0; // The amount of time in frames a mount can be in the state of flying.
+		MountData.heightBoost = 28; // Height between the mount and the ground
+		MountData.fallDamage = 0.45f; // Fall damage multiplier.
+		MountData.runSpeed = 9f; // The speed of the mount
+		MountData.dashSpeed = 12f; // The speed the mount moves when in the state of dashing.
+		MountData.flightTimeMax = 25; // The amount of time in frames a mount can be in the state of flying.
 
 		// Misc
 		MountData.fatigueMax = 0;
@@ -34,10 +34,10 @@ public class TheTable : ModMount
 
 		// Frame data and player offsets
 		MountData.totalFrames = 3;
-		MountData.playerYOffsets = Enumerable.Repeat(20, MountData.totalFrames).ToArray(); // Fills an array with values for less repeating code
+		MountData.playerYOffsets = Enumerable.Repeat(24, MountData.totalFrames).ToArray(); // Fills an array with values for less repeating code
 		MountData.xOffset = 10;
-		MountData.yOffset = 30;
-		MountData.playerHeadOffset = 0;
+		MountData.yOffset = 26;
+		MountData.playerHeadOffset = 27;
 		MountData.bodyFrame = 0;
 		// Standing
 		MountData.standingFrameCount = 1;
