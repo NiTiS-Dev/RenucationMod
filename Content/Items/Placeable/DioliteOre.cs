@@ -1,15 +1,8 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Renucation.Content.Items.Placeable;
 public class DioliteOre : ModItem
 {
-	public static int ID => ModContent.ItemType<GalactiteStone>();
+	public static int ID => ModContent.ItemType<DioliteOre>();
 	public override void SetStaticDefaults()
 	{
 		SacrificeTotal = 100;
