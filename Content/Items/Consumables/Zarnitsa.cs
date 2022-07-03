@@ -1,4 +1,6 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
+using Terraria.Chat;
+
 namespace Renucation.Content.Items.Consumables;
 public class Zarnitsa : ModItem
 {
@@ -17,22 +19,18 @@ public class Zarnitsa : ModItem
 		Item.useAnimation = 30;
 		Item.useTime = 30;
 		Item.useStyle = ItemUseStyleID.HoldUp;
-		Item.consumable = false;
+		Item.consumable = true;
 	}
 	public override bool? UseItem(Player player)
 	{
 		ZarnitsaPlayer playerz = player.GetModPlayer<ZarnitsaPlayer>();
 
-		if (playerz.IsZarnitsaUsed)
-		{
-			playerz.DisableZarnitsa();
-			Main.NewText("Zarnitsa disabled!");
-		}else
+		if (!playerz.IsZarnitsaUsed)
 		{
 			playerz.EnableZarnitsa();
-			Main.NewText("Zarnitsa enabled!");
+			return true;
 		}
 
-		return true;
+		return false;
 	}
 }

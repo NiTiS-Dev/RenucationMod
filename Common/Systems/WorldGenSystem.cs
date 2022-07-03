@@ -9,29 +9,32 @@ public class WorldGenSystem : ModSystem
 	public override void SaveWorldData(TagCompound tag)
 	{
 		tag.Set("renucationLaboratoryUnlocked", laboratoryUnlocked, true);
-		tag.Set("meteorsGeneratedV2", meteorsGenerated, true);
+		tag.Set("meteorsGeneratedV3", meteorsGenerated, true);
 	}
 	public override void LoadWorldData(TagCompound tag)
 	{
 		laboratoryUnlocked = tag.GetBool("renucationLaboratoryUnlocked");
-		meteorsGenerated = tag.GetBool("meteorsGeneratedV2");
+		meteorsGenerated = tag.GetBool("meteorsGeneratedV3");
 	}
-	public void GenerateMeteors()
+	public void GenerateMeteorBelt()
 	{
 		if (meteorsGenerated)
 			return;
 
 		if (Worlds.RenucationWorld.MeteorGeneration())
+		{
+			"Mods.Renucation.WorldGen.Steps.MeteorsFinalize".ChatKeyToAllPlayers(r: 128, g: 242, b: 225);
 			meteorsGenerated = true;
+		}
 		else
-			Main.NewText("Meteors disapear", 244, 10, 10);
+			"Meteors disapear".ChatToAllPlayers(244, 10, 10);
 	}
 	public void UnlockLaboratory()
 	{
 		if (laboratoryUnlocked)
 			return;
 
-		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.LaboratoryOpen"), 128, 242, 225);
+		"Mods.Renucation.WorldGen.Steps.LaboratoryOpen".ChatKeyToAllPlayers(r:128, g:242, b:225);
 		laboratoryUnlocked = true;
 	}
 }

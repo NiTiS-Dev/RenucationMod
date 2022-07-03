@@ -1,5 +1,7 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 
+using Terraria.DataStructures;
+
 namespace Renucation.Common.Systems;
 public class KillEnemySystem : GlobalNPC
 {
@@ -11,7 +13,7 @@ public class KillEnemySystem : GlobalNPC
 
 		if (npc.type is NPCID.WallofFlesh)
 		{
-			sys.GenerateMeteors();
+			sys.GenerateMeteorBelt();
 		}
 	}
 }

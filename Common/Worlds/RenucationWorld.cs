@@ -14,11 +14,12 @@ public class RenucationWorld : ModSystem
 {
 	#region WorldGen constants
 	public const int SafeZoneY = 45;
-	public const int ValidatorStepX = 5;
-	private const int OreRarity = 120;
-	public static readonly int[] MeteorRangeX = new int[] { 370, 1100, 2200 };
-	public static readonly int[] MeteorRangeY = new int[] { 110, 250, 450 };
-	public static readonly int[] MeteorRare = new int[] { 450, 560, 670 };
+	public const int SafeZoneX = 10;
+	public const int ValidatorStepX = 10;
+	private const int OreRarity = 225;
+	public static readonly int[] MeteorRangeX = new int[] { 370, 700, 1200 };
+	public static readonly int[] MeteorRangeY = new int[] { 90, 175, 250 };
+	public static readonly int[] MeteorRare = new int[] { 450, 560, 700 };
 	#endregion
 	public static bool IsEnabledINDEVGEN => ModContent.GetInstance<RenucationConfig>().EnableINDEVGeneration;
 	public static bool MeteorGeneration()
@@ -54,10 +55,17 @@ public class RenucationWorld : ModSystem
 
 		bool[] validPlacesX = new bool[Main.maxTilesX];
 
-		for (int x = 0; x < Main.maxTilesX; x++)
+		for (int x = 0; x < Main.maxTilesX; x++) // X Safe zone
 		{
 			validPlacesX[x] = true;
-			for (int y = SafeZoneY; y < meteorRangeSizeY + SafeZoneY; y++) // Plus 20 blocks for safe
+
+			if (x <= SafeZoneX || x >= Main.maxTilesX - SafeZoneX)
+			{
+				validPlacesX[x] = false;
+				continue;
+			}
+
+			for (int y = SafeZoneY; y < meteorRangeSizeY + SafeZoneY; y++) // Y safe zone
 			{
 				Tile tile = Main.tile[x, y];
 
@@ -68,50 +76,48 @@ public class RenucationWorld : ModSystem
 			}
 		}
 
-		int beginX = -1, endX = -1;
-		int debug_maxSize = 0;
+		List<ValidZone> validZones = new();
 
-		bool __skip = false;
 		for (int x = 0; x < Main.maxTilesX; x += ValidatorStepX)
 		{
-			if (__skip)
-				break;
-
 			if (x + meteorRangeSizeX > Main.maxTilesX)
 				break;
-			int debug_currentSize = 0;
-			for (int alsoX = x; alsoX < x + meteorRangeSizeX; alsoX++)
+
+			bool mark = true;
+			int _endX = x;
+			for (int pointX = x; pointX < x + meteorRangeSizeX; pointX++) // Try to find rectangle with empty tiles
 			{
-				if (!validPlacesX[alsoX])
+				if (!validPlacesX[pointX]) //This X-line already taken
 				{
+					mark = false;
 					break;
 				}
-				else
-				{
-					debug_currentSize++;
-					if (alsoX + 1 == x + meteorRangeSizeX)
-					{
-						beginX = x;
-						endX = alsoX + 1;
-						if (WorldGen.genRand.NextBool(3)) // Randomize meteors location
-							__skip = true;
-					}
-				}
+				_endX = pointX + 1;
 			}
-			debug_maxSize = Math.Max(debug_maxSize, debug_currentSize);
+			if (mark) // Place is found
+			{
+				ValidZone newZone = new(x, _endX);
+				if (validZones.All(vz => vz | newZone)) // Check to not collide
+					validZones.Add(newZone);
+			}
 		}
-		Main.NewText($"DEBUG Maximum size found: {debug_maxSize} Valid places: {validPlacesX.Count(x => x)}");
 
-		if (beginX == endX)
-		{
-			return false; // Found no space
-		}
+		$"DEBUG Founded Valid Zones {validZones.Count}".DebugLog(128, 242, 225);
+
+		if (validZones.Count <= 0)
+			return false;
 
 		#endregion
 		#region Gen meteors
 
 		int beginY = SafeZoneY;
 		int endY = SafeZoneY + meteorRangeSizeY;
+
+		int _selected = WorldGen.genRand.Next(validZones.Count);
+
+		(ref int beginX, ref int endX) = validZones[_selected].Unpack();
+
+		$"DEBUG Placed belt at X{beginX}:{endX} Y{beginY}:{endY} on {_selected} zone".DebugLog();
 
 		int spawnedMeteors = 0;
 		List<Rectangle> regions = new(Main.maxTilesX > 4000 ? 256 : 128);
@@ -141,7 +147,7 @@ public class RenucationWorld : ModSystem
 			}
 		}
 
-		Main.NewText($"DEBUG BeginX {beginX} EndX {endX}", 128, 242, 225);
+		$"DEBUG BeginX {beginX} EndX {endX}".DebugLog();
 
 		int debug_oreCount = 0;
 		for (int x = beginX; x < endX; x++) // Ore generation
@@ -161,13 +167,12 @@ public class RenucationWorld : ModSystem
 			}
 		}
 
-		Main.NewText($"DEBUG Spawned meteors: {spawnedMeteors} Spawned ores: {debug_oreCount}", 128, 242, 225);
+		$"DEBUG Spawned meteors: {spawnedMeteors} Spawned ores: {debug_oreCount}".DebugLog();
 
 		if (spawnedMeteors == 0)
 			return false;
 
 		#endregion
-		Main.NewText(Language.GetTextValue("Mods.Renucation.WorldGen.Steps.MeteorsFinalize"), 128, 242, 225);
 		return true;
 	}
 	public static void PlaceMeteor(Point position, uint sizeX, uint sizeY)
@@ -181,10 +186,10 @@ public class RenucationWorld : ModSystem
 		if (!IsEnabledINDEVGEN)
 			return;
 
-		int IslandIndex = tasks.Count - 1;
+		int IslandIndex = tasks.Count;
 		if (IslandIndex != -1)
 		{
-			tasks.Insert(IslandIndex + 1, new PassLegacy("Renucation Laboratory", LaboratoryGeneration));
+			tasks.Insert(IslandIndex - 4, new PassLegacy("Renucation Laboratory", LaboratoryGeneration));
 		}
 		else
 		{
@@ -194,7 +199,7 @@ public class RenucationWorld : ModSystem
 	private void LaboratoryGeneration(GenerationProgress progress, GameConfiguration config)
 	{
 		progress.Message = Language.GetTextValue("Mods.Renucation.WorldGen.Steps.IslandGeneration");
-
+		
 		// Place laboratory otherside skeletron dungeon
 		int x = (Main.dungeonX > Main.maxTilesX / 2) ? 170 : Main.maxTilesX - 170;
 
@@ -221,5 +226,32 @@ public class RenucationWorld : ModSystem
 			new Actions.SetTile(TileID.Stone, true),
 			new Actions.PlaceWall(WallID.DirtUnsafe, true)
 		));
+	}
+	private readonly struct ValidZone
+	{
+		private readonly int startX;
+		private readonly int endX;
+
+		public ValidZone(int startX, int endX)
+		{
+			this.startX = startX;
+			this.endX = endX;
+		}
+		public readonly bool Colide(ValidZone other)
+		{
+			if (other.startX >= this.startX && other.startX <= this.endX)
+				return true;
+			else
+			if (other.endX >= this.startX && other.endX <= this.endX)
+				return true;
+
+			return false;
+		}
+		public readonly (int, int) Unpack()
+			=> (startX, endX);
+		public static bool operator |(ValidZone left, ValidZone right)
+			=> !left.Colide(right);
+		public override string ToString()
+			=> $"{{{startX}:{endX}}}";
 	}
 }

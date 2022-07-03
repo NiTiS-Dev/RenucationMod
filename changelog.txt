@@ -4,6 +4,8 @@
 - Added Normal texture for Diolite ore
 - Diolite ore now drops right item
 - Added Meteor Belt biome
+- Fixed not spawned Meteor Belt on server
+- Meteor Belt now can spawns on Large Worlds
 
 v0.0.0.7:
 - Added Galactite Stone
