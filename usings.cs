@@ -14,6 +14,8 @@ using Terraria.Chat;
 
 internal static class RenuExtensions
 {
+	public static RenucationPlayer Renu(this Player player)
+		=> player.GetModPlayer<RenucationPlayer>();
 	public static Point GetPoint(this Player player)
 		=> new((int)player.position.X / 16, (int)player.position.Y / 16);
 	public static void DebugLog(this object obj, byte r = 255, byte g = 255, byte b = 255, bool sendOnServer = true)
