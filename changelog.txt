@@ -1,4 +1,7 @@
-﻿v0.0.2:
+﻿v0.0.3:
+- Experimental Heart texture changing
+
+v0.0.2:
 - Diolite Ore can only be mined if the laboratory is open (First mech death)
 - Added Meteor Eater
 - Diolite ore can spread at time
