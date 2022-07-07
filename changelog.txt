@@ -1,4 +1,10 @@
-﻿v0.0.1:
+﻿v0.0.2:
+- Diolite Ore can only be mined if the laboratory is open (First mech death)
+- Added Meteor Eater
+- Diolite ore can spread at time
+- Some server-side fixes
+
+v0.0.1:
 - Added Verblassen
 - Added The Table Mount
 - Added Normal texture for Diolite ore

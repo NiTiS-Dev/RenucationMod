@@ -30,7 +30,7 @@ public class Verblassen : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddIngredient<Placeable.DioliteBar>(14)
+			.AddIngredient<Placeable.DioliteBar>(12)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}

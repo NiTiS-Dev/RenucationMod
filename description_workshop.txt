@@ -7,11 +7,12 @@ The mod will add more content and new locations to explore
 Explore mod content:
 [list]
     [*]New weapons and accessories  
-    [*]New biomes and bosses 
+    [*]New biomes and bosses
+    [*]New world generation
     [*]New mechanics
 [/list]
 
-[quote=NiTiS-Dev]
+[quote]
 This project is Open-Source
 Repository: https://github.com/NiTiS-Dev/RenucationMod
 [/quote] 
@@ -21,4 +22,4 @@ If you want to join this project
 Discord: @NiTiSon#3995
 Guild: https://discord.gg/GhBJpkGmP4
 
-Changelog here: https://github.com/NiTiS-Dev/RenucationMod/blob/singleton/changelog.txt
+Full Changelog here: https://github.com/NiTiS-Dev/RenucationMod/blob/singleton/changelog.txt

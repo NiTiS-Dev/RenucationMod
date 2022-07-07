@@ -192,7 +192,7 @@ public abstract class WormHead : Worm
 		if (maxTilePosY > Main.maxTilesY)
 			maxTilePosY = Main.maxTilesY;
 
-		bool collision = false;
+		bool collision = true;
 
 		// This is the initial check for collision with tiles.
 		for (int i = minTilePosX; i < maxTilePosX; ++i)

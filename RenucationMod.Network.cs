@@ -1,5 +1,6 @@
 ﻿// The NiTiS-Dev licenses this file to you under the MIT license.
 using Renucation.Common.Players;
+using Renucation.Content.Tiles;
 using System.IO;
 using Terraria;
 
@@ -11,6 +12,7 @@ public partial class RenucationMod
 	{
 		RenucationPlayerSyncPlayer = 0,
 		RenucationZarnitsaSyncPlayer = 1,
+		RenucationBlockSpread = 2,
 	}
 
 	public override void HandlePacket(BinaryReader reader, int whoAmI)
@@ -32,6 +34,14 @@ public partial class RenucationMod
 					zarnitsaPlayer.EnableZarnitsa();
 				else
 					zarnitsaPlayer.DisableZarnitsa();
+
+				break;
+			case MessageType.RenucationBlockSpread:
+				int i, j;
+				i = reader.ReadInt32();
+				j = reader.ReadInt32();
+
+				Main.tile[i, j].TileType = DioliteOre.ShortID;
 
 				break;
 			default:

@@ -29,7 +29,7 @@ public class Vibraxe : ModItem
 		Item.UseSound = SoundID.Item1;
 		Item.autoReuse = true;
 
-		Item.pick = 195;
+		Item.pick = 190;
 	}
 	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
@@ -61,7 +61,7 @@ public class Vibraxe : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddIngredient<Placeable.DioliteBar>(18)
+			.AddIngredient<Placeable.DioliteBar>(14)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}

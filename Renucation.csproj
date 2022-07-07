@@ -9,7 +9,7 @@
 		<NoWarn>MSB3270</NoWarn>
 
 		<Authors>NickName73, NiTiS-Dev</Authors>
-		<AssemblyVersion>0.0.1</AssemblyVersion>
+		<AssemblyVersion>0.0.2</AssemblyVersion>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -20,5 +20,6 @@
 	<ItemGroup>
 	  <Folder Include="AssetsRaw\Textures\Items\Armor\" />
 	  <Folder Include="Assets\" />
+	  <Folder Include="Common\NPCs\" />
 	</ItemGroup>
 </Project>

@@ -9,6 +9,6 @@ public class TileCounter : ModSystem
 	public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
 	{
 		labBlockCount = tileCounts[ModContent.TileType<Content.Tiles.LaboratoryBlock>()];
-		galactiteStoneBlockCount = tileCounts[ModContent.TileType<Content.Tiles.GalactiteStone>()];
+		galactiteStoneBlockCount = tileCounts[ModContent.TileType<Content.Tiles.GalactiteStone>()] + tileCounts[ModContent.TileType<Content.Tiles.DioliteOre>()];
 	}
 }
