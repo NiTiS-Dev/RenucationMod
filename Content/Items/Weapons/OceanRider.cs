@@ -64,8 +64,5 @@ public class OceanRider : ModItem
 	{
 		return !player.ZoneBeach;
 	}
-	public override Vector2? HoldoutOffset()
-	{
-		return new Vector2(-4f, 4f);
-	}
+	public override Vector2? HoldoutOffset() => new(-4f, 4f);
 }
